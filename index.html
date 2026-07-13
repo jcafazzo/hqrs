@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adversarial review and 2026 redesign concepts for the HQRS 846 introductory human factors lecture.">
+  <title>HQRS 846 · Lecture Review 2026</title>
+  <style>
+    :root {
+      --ink: #0b0d0f;
+      --ink-2: #15191d;
+      --paper: #f7f7f5;
+      --paper-2: #ecece7;
+      --cyan: #08bfd5;
+      --teal: #006c75;
+      --coral: #ff5a52;
+      --amber: #f2b84b;
+      --muted: #6f777c;
+      --line: rgba(11, 13, 15, .13);
+      --radius: 28px;
+      --shadow: 0 24px 80px rgba(7, 17, 20, .12);
+      --ease-out: cubic-bezier(.23, 1, .32, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      width: min(1120px, calc(100% - 32px));
+      margin: 12px auto 0;
+      padding: 10px 12px 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border: 1px solid rgba(255,255,255,.58);
+      border-radius: 18px;
+      background: rgba(247,247,245,.76);
+      backdrop-filter: blur(22px) saturate(160%);
+      box-shadow: 0 8px 30px rgba(11,13,15,.08);
+    }
+    .nav strong { letter-spacing: -.02em; }
+    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 11px;
+      border-radius: 10px;
+      color: #384044;
+      font-size: 14px;
+    }
+    .nav a:hover { background: rgba(8,191,213,.12); color: var(--ink); }
+
+    main { overflow: hidden; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 104px 0; }
+    .section.compact { padding: 72px 0; }
+    .dark { background: var(--ink); color: var(--paper); }
+    .teal { background: var(--teal); color: white; }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .dark .eyebrow, .teal .eyebrow { color: var(--cyan); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 980px;
+      margin-bottom: 30px;
+      font-size: clamp(58px, 9vw, 128px);
+      line-height: .9;
+      letter-spacing: -.065em;
+      font-weight: 730;
+    }
+    h2 {
+      max-width: 880px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+    h3 { font-size: 24px; line-height: 1.15; letter-spacing: -.025em; }
+    .lede { max-width: 790px; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.32; color: #4d5559; }
+    .dark .lede, .teal .lede { color: rgba(255,255,255,.72); }
+    .accent { color: var(--cyan); }
+    .coral { color: var(--coral); }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      padding: 120px 0 80px;
+      background:
+        radial-gradient(circle at 84% 22%, rgba(8,191,213,.2), transparent 34%),
+        radial-gradient(circle at 2% 90%, rgba(255,90,82,.1), transparent 28%),
+        var(--ink);
+      color: var(--paper);
+    }
+    .hero .eyebrow { color: var(--cyan); }
+    .hero-note { display: flex; align-items: center; gap: 14px; margin-top: 54px; color: rgba(255,255,255,.62); }
+    .hero-note::before { content: ""; width: 54px; height: 2px; background: var(--coral); }
+
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: -55px; position: relative; z-index: 2; }
+    .metric {
+      min-height: 180px;
+      padding: 26px;
+      background: white;
+      border: 1px solid rgba(11,13,15,.08);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .metric b { display: block; font-size: 52px; line-height: 1; letter-spacing: -.055em; }
+    .metric span { display: block; margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.35; }
+
+    .verdict-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 54px; align-items: start; }
+    .quote-card {
+      padding: 38px;
+      background: var(--cyan);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .quote-card p { margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1.02; letter-spacing: -.045em; font-weight: 700; }
+    .quote-card small { display: block; margin-top: 26px; font-weight: 650; }
+
+    .strength-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .strength {
+      overflow: hidden;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+    .strength img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #ddd; }
+    .strength-copy { padding: 24px; }
+    .strength-copy p { margin-bottom: 0; color: var(--muted); }
+
+    .issue-table { width: 100%; border-collapse: collapse; margin-top: 38px; font-size: 15px; }
+    .issue-table th, .issue-table td { padding: 20px 18px; vertical-align: top; text-align: left; border-bottom: 1px solid rgba(255,255,255,.14); }
+    .issue-table th { color: var(--cyan); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .issue-table td:first-child { color: rgba(255,255,255,.62); width: 31%; }
+    .issue-table td:nth-child(2) { width: 31%; }
+    .issue-table td:last-child { color: rgba(255,255,255,.68); }
+
+    .ted-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 42px; align-items: center; }
+    .video {
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      border-radius: 24px;
+      background: #000;
+      box-shadow: var(--shadow);
+    }
+    .video a { position: relative; width: 100%; height: 100%; display: block; }
+    .video img { width: 100%; height: 100%; object-fit: cover; opacity: .82; transition: opacity 180ms ease, transform 260ms var(--ease-out); }
+    .video a::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; color: white; font-size: 54px; text-shadow: 0 6px 28px rgba(0,0,0,.6); }
+    .video a:hover img { opacity: 1; transform: scale(1.012); }
+    .check-list { list-style: none; padding: 0; margin: 28px 0 0; }
+    .check-list li { position: relative; padding: 12px 0 12px 30px; border-bottom: 1px solid var(--line); }
+    .check-list li::before { content: "→"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+
+    .spine { margin-top: 48px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .spine-step { min-height: 210px; padding: 22px; border-radius: 20px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); }
+    .spine-step b { display: block; color: var(--cyan); font-size: 12px; letter-spacing: .11em; }
+    .spine-step strong { display: block; margin: 52px 0 10px; font-size: 20px; line-height: 1.08; }
+    .spine-step span { color: rgba(255,255,255,.6); font-size: 14px; }
+
+    .tabs { display: inline-flex; flex-wrap: wrap; padding: 5px; margin: 28px 0 34px; border-radius: 16px; background: var(--paper-2); }
+    .tab {
+      border: 0;
+      padding: 11px 16px;
+      border-radius: 12px;
+      background: transparent;
+      color: #5b6367;
+      cursor: pointer;
+      transition: color 180ms ease, background 180ms ease, transform 120ms var(--ease-out);
+    }
+    .tab:active { transform: scale(.97); }
+    .tab[aria-selected="true"] { background: white; color: var(--ink); box-shadow: 0 4px 14px rgba(11,13,15,.08); }
+    .direction-panel { display: none; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .direction-panel.active { display: grid; }
+    .direction-visual {
+      min-height: 380px;
+      padding: 38px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .direction-visual.forensic { background: var(--ink); color: white; }
+    .direction-visual.museum { background: white; border: 1px solid var(--line); }
+    .direction-visual.theatre { background: var(--cyan); }
+    .direction-index { font-size: 13px; letter-spacing: .12em; color: var(--coral); }
+    .direction-visual h3 { max-width: 560px; margin: auto 0 0; font-size: clamp(40px, 5vw, 64px); }
+    .direction-copy { padding: 22px 8px; }
+    .direction-copy p { color: var(--muted); }
+
+    .gallery { display: grid; gap: 74px; margin-top: 52px; }
+    .mock-row { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start; }
+    .mock-meta { position: sticky; top: 94px; padding-top: 6px; }
+    .mock-meta .tag { display: inline-block; margin-bottom: 12px; padding: 6px 9px; border-radius: 999px; background: rgba(8,191,213,.12); color: var(--teal); font-size: 12px; font-weight: 700; }
+    .mock-meta p { color: var(--muted); font-size: 14px; }
+    .slide-mock {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .slide-mock .source {
+      position: absolute;
+      left: 4.2%; bottom: 4.3%;
+      z-index: 5;
+      font-size: clamp(9px, 1.15vw, 15px);
+      letter-spacing: .02em;
+      opacity: .58;
+    }
+    .slide-mock .kicker { font-size: clamp(11px, 1.5vw, 20px); letter-spacing: .16em; font-weight: 700; text-transform: uppercase; }
+    .slide-mock .hero-type { font-size: clamp(42px, 7.6vw, 112px); line-height: .88; letter-spacing: -.065em; font-weight: 730; }
+
+    .mock-axiom { display: flex; align-items: flex-end; padding: 7%; background: var(--ink); color: white; }
+    .mock-axiom::after { content: ""; position: absolute; width: 38%; aspect-ratio: 1; right: -8%; top: -20%; border-radius: 50%; border: 2px solid rgba(8,191,213,.4); box-shadow: 0 0 0 34px rgba(8,191,213,.06), 0 0 0 68px rgba(8,191,213,.04); }
+    .mock-axiom .hero-type { max-width: 88%; font-size: clamp(40px, 5.15vw, 78px); }
+    .mock-axiom .hero-type span { color: var(--cyan); }
+
+    .mock-language { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); }
+    .language-half { display: flex; flex-direction: column; justify-content: center; padding: 8%; }
+    .language-half:first-child { background: #eee9e5; }
+    .language-half strong { font-size: clamp(38px, 6.8vw, 94px); line-height: .9; letter-spacing: -.06em; }
+    .language-half:first-child strong { color: #777; text-decoration: line-through; text-decoration-color: var(--coral); text-decoration-thickness: .08em; }
+    .language-half:last-child strong { color: var(--teal); }
+    .language-half small { margin-top: 18px; color: var(--muted); }
+    .letter-r { color: var(--coral); }
+
+    .mock-system { color: white; background: #13252a; }
+    .mock-system img { width: 100%; height: 100%; object-fit: cover; opacity: .63; }
+    .mock-system .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,12,14,.96), rgba(7,12,14,.62) 45%, rgba(7,12,14,.08)); }
+    .mock-system .copy { position: absolute; inset: 0; padding: 8%; display: flex; flex-direction: column; justify-content: center; max-width: 62%; }
+    .mock-system .copy p { margin: 24px 0 0; font-size: clamp(16px, 2.25vw, 31px); color: rgba(255,255,255,.74); }
+
+    .mock-doloral { padding: 7%; background: #faf7f0; display: flex; flex-direction: column; justify-content: center; }
+    .drug-line { display: flex; align-items: baseline; justify-content: center; gap: 5%; white-space: nowrap; }
+    .drug-line b { font-size: clamp(40px, 8vw, 118px); letter-spacing: -.055em; }
+    .drug-line span { font-size: clamp(24px, 4vw, 56px); color: #53595b; }
+    .eleven { position: absolute; inset: 0; display: grid; place-items: center; background: var(--coral); color: var(--ink); opacity: 0; transform: scale(.96); transition: opacity 240ms var(--ease-out), transform 240ms var(--ease-out); }
+    .eleven b { font-size: clamp(72px, 16vw, 220px); line-height: .8; letter-spacing: -.08em; }
+    .mock-doloral.revealed .eleven { opacity: 1; transform: scale(1); }
+    .reveal {
+      position: absolute; right: 3.5%; bottom: 4%; z-index: 7;
+      border: 1px solid rgba(11,13,15,.15); border-radius: 999px;
+      padding: 9px 13px; background: rgba(255,255,255,.8); backdrop-filter: blur(12px);
+      cursor: pointer; transition: transform 120ms var(--ease-out);
+    }
+    .reveal:active { transform: scale(.96); }
+
+    .mock-parkinson { padding: 7%; background: var(--ink); color: white; }
+    .dose-title { max-width: 72%; font-size: clamp(36px, 7vw, 102px); line-height: .9; letter-spacing: -.06em; font-weight: 730; }
+    .dose-title span { color: var(--cyan); }
+    .dose-grid { position: absolute; left: 7%; right: 7%; bottom: 13%; display: grid; grid-template-columns: repeat(18, 1fr); gap: 1.2%; }
+    .dose { height: clamp(30px, 7vw, 94px); border-radius: 999px; background: var(--cyan); }
+    .dose.late { background: var(--amber); }
+    .dose.missed { background: var(--coral); }
+    .dose-legend { position: absolute; right: 5%; top: 7%; display: grid; gap: 6px; font-size: clamp(9px, 1.2vw, 15px); color: rgba(255,255,255,.72); }
+
+    .mock-ai { padding: 6.5%; background: #eef8f9; }
+    .mock-ai h4 { margin: 0; max-width: 76%; font-size: clamp(30px, 3.45vw, 54px); line-height: .94; letter-spacing: -.055em; }
+    .hospital-grid { position: absolute; left: 6.5%; right: 6.5%; bottom: 10%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2%; }
+    .hospital { min-height: clamp(72px, 13vw, 175px); padding: 9%; border: 1px solid rgba(0,108,117,.22); border-radius: 15px; background: white; }
+    .hospital b { display: block; font-size: clamp(24px, 4.2vw, 58px); color: var(--teal); letter-spacing: -.05em; }
+    .hospital span { font-size: clamp(8px, 1.1vw, 15px); color: var(--muted); }
+
+    .mock-pulse { color: white; background: #263439; }
+    .mock-pulse img { width: 100%; height: 100%; object-fit: cover; }
+    .mock-pulse::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,15,18,.92), rgba(8,15,18,.22) 65%); }
+    .pulse-copy { position: absolute; z-index: 2; left: 7%; top: 12%; max-width: 54%; }
+    .pulse-copy h4 { margin: 0; font-size: clamp(34px, 3.85vw, 60px); line-height: .91; letter-spacing: -.06em; }
+    .pulse-stat { display: flex; gap: 26px; margin-top: 28px; }
+    .pulse-stat b { display: block; font-size: clamp(24px, 4vw, 56px); color: var(--cyan); }
+    .pulse-stat small { color: rgba(255,255,255,.68); }
+
+    .mock-resilience { padding: 6.5%; background: var(--cyan); color: var(--ink); }
+    .mock-resilience h4 { margin: 0; font-size: clamp(32px, 3.55vw, 56px); line-height: .91; letter-spacing: -.06em; max-width: 78%; }
+    .resilience-stats { position: absolute; left: 6.5%; right: 6.5%; bottom: 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2%; }
+    .resilience-stats div { padding-top: 14px; border-top: 2px solid rgba(11,13,15,.5); }
+    .resilience-stats b { display: block; font-size: clamp(30px, 6vw, 86px); line-height: 1; letter-spacing: -.06em; }
+    .resilience-stats span { font-size: clamp(9px, 1.3vw, 16px); }
+
+    .mock-corridor { color: white; background: #1d2528; }
+    .mock-corridor img { width: 100%; height: 100%; object-fit: cover; opacity: .78; }
+    .mock-corridor::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(9,13,15,.88), transparent 62%); }
+    .corridor-copy { position: absolute; z-index: 2; left: 7%; top: 12%; max-width: 62%; }
+    .corridor-copy h4 { margin: 0; font-size: clamp(32px, 6.2vw, 90px); line-height: .9; letter-spacing: -.06em; }
+    .corridor-copy p { font-size: clamp(13px, 2vw, 26px); color: rgba(255,255,255,.74); }
+
+    .example-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 42px; }
+    .example-card { padding: 28px; border-radius: 22px; background: white; border: 1px solid var(--line); }
+    .example-card .year { color: var(--teal); font-size: 12px; font-weight: 750; letter-spacing: .12em; }
+    .example-card h3 { margin: 14px 0 10px; }
+    .example-card p { color: var(--muted); }
+    .example-card a { display: inline-flex; align-items: center; gap: 8px; color: var(--teal); font-weight: 700; text-decoration: none; }
+    .example-card a::after { content: "↗"; }
+    .caution { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: #767d80; }
+
+    .resource-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    .resource { min-height: 170px; padding: 26px; border-radius: 22px; color: white; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); text-decoration: none; }
+    .resource:hover { background: rgba(255,255,255,.11); }
+    .resource strong { display: block; font-size: 22px; }
+    .resource span { display: block; margin-top: 38px; color: rgba(255,255,255,.6); font-size: 14px; }
+
+    .priority-list { counter-reset: priorities; list-style: none; padding: 0; margin: 46px 0 0; }
+    .priority-list li { counter-increment: priorities; display: grid; grid-template-columns: 66px 1fr; gap: 20px; padding: 26px 0; border-top: 1px solid var(--line); }
+    .priority-list li::before { content: "0" counter(priorities); color: var(--coral); font-size: 18px; font-weight: 700; }
+    .priority-list strong { display: block; font-size: 24px; letter-spacing: -.02em; }
+    .priority-list span { display: block; max-width: 760px; margin-top: 6px; color: var(--muted); }
+
+    footer { padding: 46px 0; background: #080a0b; color: rgba(255,255,255,.52); font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+    .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out); }
+    .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .metrics, .strength-grid, .resource-row { grid-template-columns: repeat(2, 1fr); }
+      .verdict-grid, .ted-grid, .direction-panel, .mock-row { grid-template-columns: 1fr; }
+      .spine { grid-template-columns: repeat(2, 1fr); }
+      .mock-meta { position: static; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 620px) {
+      .section { padding: 76px 0; }
+      .metrics, .strength-grid, .example-grid, .resource-row { grid-template-columns: 1fr; }
+      .spine { grid-template-columns: 1fr; }
+      .issue-table { display: block; overflow-x: auto; }
+      .direction-visual { min-height: 300px; }
+      .mock-row { gap: 16px; }
+      .mock-meta p { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal-on-scroll { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Review sections">
+    <strong>HQRS 846 · 2026</strong>
+    <div class="nav-links">
+      <a href="#verdict">Verdict</a>
+      <a href="#critique">Critique</a>
+      <a href="#directions">Directions</a>
+      <a href="#renders">Rendered slides</a>
+      <a href="#examples">New examples</a>
+      <a href="#actions">Actions</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Multi-agent adversarial review · July 2026</p>
+        <h1>Keep the stagecraft.<br><span class="accent">Tighten the argument.</span></h1>
+        <p class="lede">The deck still knows how to command a room. Its refresh is chiefly editorial: make <strong>use error, not user error</strong> the unmistakable spine, and let every story widen the frame from person to system.</p>
+        <p class="hero-note">Lecture reviewed as a live two-hour performance for 44–45 graduate health professionals.</p>
+      </div>
+    </header>
+
+    <div class="wrap metrics" aria-label="Audit metrics">
+      <div class="metric"><b>361</b><span>exported frames, including progressive builds</span></div>
+      <div class="metric"><b>0</b><span>appearances of “use error” or “user error” in extracted slide text</span></div>
+      <div class="metric"><b>17</b><span>exact duplicate-image sets; 24 repeated frames</span></div>
+      <div class="metric"><b>2.23:1</b><span>approximate contrast of white type on the current bright cyan</span></div>
+    </div>
+
+    <section id="verdict" class="section">
+      <div class="wrap verdict-grid reveal-on-scroll">
+        <div>
+          <p class="eyebrow">Panel verdict</p>
+          <h2>Keep the operating system. Edit the content inventory.</h2>
+          <p class="lede">The Jobs/TED DNA is real: suspense, object stories, humour, hard cuts, and presenter-dependent meaning. The weakness is accretion. Human error and safety, product design, and a service-design portfolio now compete for the same opening lecture.</p>
+          <p>The refresh should subtract, sequence, and re-source before it reskins. A more polished version of the same inventory would still blur the learner transformation.</p>
+        </div>
+        <aside class="quote-card">
+          <p>People will err.<br>Systems decide what happens next.</p>
+          <small>Recommended 2026 companion line</small>
+        </aside>
+      </div>
+
+      <div class="wrap">
+        <div class="strength-grid">
+          <article class="strength reveal-on-scroll">
+            <img src="assets/source/slide-008.jpg" alt="Original slide: Humans are fallible. We will err.">
+            <div class="strength-copy"><h3>The cold open works</h3><p>The audience makes an attribution, sees the designed card, and revises its judgment. Preserve that experience.</p></div>
+          </article>
+          <article class="strength reveal-on-scroll">
+            <img src="assets/source/slide-141.jpg" alt="Original EpiPen radiograph slide">
+            <div class="strength-copy"><h3>Object theatre works</h3><p>Pill bottles, pumps, and the EpiPen make design tangible at Jobs-like scale.</p></div>
+          </article>
+          <article class="strength reveal-on-scroll">
+            <img src="assets/source/slide-280.jpg" alt="Original product and service comparison slide">
+            <div class="strength-copy"><h3>Spatial contrasts work</h3><p>The best conceptual slides show a relationship instantly and leave you room to perform.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="critique" class="section dark">
+      <div class="wrap">
+        <p class="eyebrow">Hard critique</p>
+        <h2>The middle contains three excellent talks.</h2>
+        <p class="lede">Each would work alone. Together they flatten the main idea.</p>
+        <table class="issue-table">
+          <thead><tr><th>Before</th><th>After</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>“Use error, not user error” is absent.</td><td>Turn `USER ERROR` into `USE ERROR`, then reveal the surrounding system.</td><td>The course's protected vocabulary must be seen as well as spoken.</td></tr>
+            <tr><td>Fallibility is presented as a conclusion.</td><td>Pair it immediately with anticipation, detection, and recovery.</td><td>Fallibility is a design requirement, not fatalism.</td></tr>
+            <tr><td>SEIPS, Human-Tech Ladder, empathy, paradoxes, design thinking, service design, and HIE all compete.</td><td>Use SEIPS/Human-Tech Ladder to diagnose and HIE to act.</td><td>Two reusable lenses transfer better than seven adjacent concepts.</td></tr>
+            <tr><td>Dense paper pages, browser screenshots, and workflow maps are projected intact.</td><td>Reconstruct one relevant detail and move nuance into notes.</td><td>A 45-person room cannot inspect and listen simultaneously.</td></tr>
+            <tr><td>Healthcare is framed as ad hoc versus regulated industries.</td><td>Compare standardization, variability, feedback, regulatory reach, and learning capacity.</td><td>The binary is contestable and can distract experienced clinicians.</td></tr>
+            <tr><td>Late sequences each open a new emotional narrative.</td><td>Choose one mapped capstone; move the others to later lectures or appendix.</td><td>Medly, refugee response, and COVID response currently ask to be separate acts.</td></tr>
+            <tr><td>White text sits on bright cyan.</td><td>Use ink on bright cyan, or white on dark teal.</td><td>The current pairing is about 2.23:1 contrast and is weak from the back of the room.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap ted-grid reveal-on-scroll">
+        <div class="video">
+          <a href="https://www.youtube.com/watch?v=p1KaxO6zsqw" aria-label="Watch Patient, Heal Thyself: Dr Joseph Cafazzo at TEDxToronto on YouTube"><img src="assets/source/tedx-still.jpg" alt="Joseph Cafazzo on the TEDxToronto stage in 2012"></a>
+        </div>
+        <div>
+          <p class="eyebrow">Your 2012 TEDx talk</p>
+          <h2 style="font-size:clamp(38px,5vw,64px)">The useful inheritance is narrative, not nostalgia.</h2>
+          <ul class="check-list">
+            <li>A personal stake precedes the technical argument.</li>
+            <li>A real person remains the emotional protagonist.</li>
+            <li>Evidence arrives as payoff, not preamble.</li>
+            <li>Technology is repeatedly interrupted by faces.</li>
+            <li>The ending returns to the opening people and promise.</li>
+          </ul>
+          <p style="margin-top:22px;color:var(--muted)">For this lecture, replace the product as hero with the <strong>work system</strong> as causal protagonist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap">
+        <p class="eyebrow">Recommended narrative spine</p>
+        <h2>One argument in six movements.</h2>
+        <div class="spine">
+          <div class="spine-step"><b>01 · Human</b><strong>Invite the attribution</strong><span>Let the room see an obvious mistake.</span></div>
+          <div class="spine-step"><b>02 · Reveal</b><strong>Show the conditions</strong><span>Widen from action to circumstance.</span></div>
+          <div class="spine-step"><b>03 · Map</b><strong>See the system</strong><span>Physical, psychological, team, organization, policy.</span></div>
+          <div class="spine-step"><b>04 · Choose</b><strong>Test mitigations</strong><span>Weak controls versus stronger design.</span></div>
+          <div class="spine-step"><b>05 · Prove</b><strong>Show changed performance</strong><span>A before/after with honest outcomes.</span></div>
+          <div class="spine-step"><b>06 · Return</b><strong>Restore dignity</strong><span>Use error, not user error.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="directions" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Design it three ways</p>
+        <h2>Three genuinely different lecture shapes.</h2>
+        <div class="tabs" role="tablist" aria-label="Redesign directions">
+          <button class="tab" role="tab" aria-selected="true" data-target="forensic">Forensic Thread</button>
+          <button class="tab" role="tab" aria-selected="false" data-target="museum">Museum of Designed Error</button>
+          <button class="tab" role="tab" aria-selected="false" data-target="theatre">Systems Theatre</button>
+        </div>
+
+        <div class="direction-panel active" id="forensic" role="tabpanel">
+          <div class="direction-visual forensic"><span class="direction-index">01 · Recommended</span><h3>One event.<br>Five system layers.<br>One redesigned ending.</h3></div>
+          <div class="direction-copy"><h3>The Forensic Thread</h3><p>One contemporary event recurs through the whole lecture. The first view shows only the apparently obvious action. Each return widens the system boundary, tests mitigations, and closes with redesigned conditions.</p><p><strong>Best for:</strong> ensuring the no-blame systems thesis survives two hours of rich material.</p></div>
+        </div>
+        <div class="direction-panel" id="museum" role="tabpanel">
+          <div class="direction-visual museum"><span class="direction-index">02 · Most Jobs-like</span><h3>Six objects.<br>Six predictable errors.<br>Six better systems.</h3></div>
+          <div class="direction-copy"><h3>The Museum of Designed Error</h3><p>Insulin pump, EHR, AED, pill bottle, EpiPen, PPE. Each object follows the same five beats: what was seen, what was attempted, what the design assumed, why the action was predictable, and what stronger design changes.</p><p><strong>Best for:</strong> the cleanest aesthetic refresh and most recognizable object theatre.</p></div>
+        </div>
+        <div class="direction-panel" id="theatre" role="tabpanel">
+          <div class="direction-visual theatre"><span class="direction-index">03 · Most interactive</span><h3>Freeze the case.<br>Let the room blame.<br>Then widen the frame.</h3></div>
+          <div class="direction-copy"><h3>Systems Theatre</h3><p>Nine groups of about five investigate three cases. Each commits to an apparent cause, then revises as system layers appear. The final slide records how the room's explanation changed.</p><p><strong>Best for:</strong> using the experience of this graduate cohort as live course material.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="renders" class="section compact">
+      <div class="wrap">
+        <p class="eyebrow">Rendered redesign studies</p>
+        <h2>Examples, not a prescribed template.</h2>
+        <p class="lede">These are deliberately different slide beats—axiom, terminology, case, evidence, and reflection—held together by one typographic and colour system.</p>
+
+        <div class="gallery">
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Axiom</span><h3>Give fallibility a consequence</h3><p>Use the original line, then complete its logic. Hard cut. No animation.</p></div>
+            <div class="slide-mock mock-axiom" data-render="01-axiom"><div class="hero-type">People will err.<br><span>Systems decide what happens next.</span></div><span class="source">HQRS 846 · 2026</span></div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Terminology</span><h3>Make the missing “R” memorable</h3><p>One Magic Move: remove the person from the blame label, then reveal the system around use.</p></div>
+            <div class="slide-mock mock-language" data-render="02-language">
+              <div class="language-half"><strong>USE<span class="letter-r">R</span><br>ERROR</strong><small>Who failed?</small></div>
+              <div class="language-half"><strong>USE<br>ERROR</strong><small>What made this action likely?</small></div>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Case reveal</span><h3>Keep the person still; change the frame</h3><p>The image widens from hand/device to interruptions, supplies, alarm logic, and environment.</p></div>
+            <div class="slide-mock mock-system" data-render="03-system">
+              <img src="assets/generated/system-conditions.png" alt="Generated clinical scene showing an infusion-pump interaction within a complex work environment">
+              <div class="shade"></div><div class="copy"><span class="kicker">Same person</span><div class="hero-type">Different system.</div><p>The action did not occur alone.</p></div><span class="source">Original image generated for this review</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Object theatre</span><h3>A Canadian 2025 visual hook</h3><p>Click the slide. One display turned `1` beside `1 mg/mL` into an apparent `11 mg/mL`.</p></div>
+            <div class="slide-mock mock-doloral" data-render="04-doloral">
+              <span class="kicker">What did the display say?</span><div class="drug-line"><b>DOLORAL 1</b><span>1 mg/mL</span></div>
+              <div class="eleven"><b>11 mg/mL</b></div><button class="reveal" type="button">Reveal</button><span class="source">ISMP Canada · 20 Feb 2025</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">System case</span><h3>Let the system appear in the count</h3><p>The medication problem becomes visible before the case is narrated.</p></div>
+            <div class="slide-mock mock-parkinson" data-render="05-parkinson">
+              <div class="dose-title">18 doses.<br><span>8 on time.</span></div>
+              <div class="dose-legend"><span>8 on time · cyan</span><span>3 late · amber</span><span>7 missed · coral</span></div>
+              <div class="dose-grid">
+                <i class="dose"></i><i class="dose"></i><i class="dose late"></i><i class="dose"></i><i class="dose missed"></i><i class="dose"></i><i class="dose missed"></i><i class="dose late"></i><i class="dose"></i><i class="dose missed"></i><i class="dose"></i><i class="dose missed"></i><i class="dose late"></i><i class="dose"></i><i class="dose missed"></i><i class="dose"></i><i class="dose missed"></i><i class="dose missed"></i>
+              </div><span class="source">HSSIB · Time-critical Parkinson's medication · 2024</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">AI as system</span><h3>Avoid “AI works / AI fails”</h3><p>The identical model creates different work in different hospitals. Performance belongs to the implemented system.</p></div>
+            <div class="slide-mock mock-ai" data-render="06-ai">
+              <span class="kicker" style="color:var(--teal)">Same model · Four hospitals</span><h4>The model didn't change.<br>The system did.</h4>
+              <div class="hospital-grid"><div class="hospital"><b>21</b><span>alerts managed per identified case</span></div><div class="hospital"><b>24</b><span>alerts managed per identified case</span></div><div class="hospital"><b>30</b><span>alerts managed per identified case</span></div><div class="hospital"><b>35</b><span>alerts managed per identified case</span></div></div>
+              <span class="source">Wong et al. · JAMA Network Open · 2026 · 12-hour horizon</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Design equity</span><h3>The number looked objective</h3><p>Use the device to reveal design, validation, procurement, and clinical interpretation as one system.</p></div>
+            <div class="slide-mock mock-pulse" data-render="07-pulse">
+              <img src="assets/generated/pulse-oximetry.png" alt="Generated editorial image of pulse-oximetry sensors on hands with varied skin pigmentation">
+              <div class="pulse-copy"><h4>The number looked objective.<br>The system wasn't.</h4><div class="pulse-stat"><div><b>11.7%</b><small>Black patients</small></div><div><b>3.6%</b><small>White patients</small></div></div></div>
+              <span class="source">Occult hypoxemia in one cohort · Sjoding et al., NEJM 2020 · race is an imperfect proxy for pigmentation</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Resilience</span><h3>Do not teach only from tragedy</h3><p>Frontline people are often the system's successful last defense. End one sequence with recovery.</p></div>
+            <div class="slide-mock mock-resilience" data-render="08-resilience">
+              <span class="kicker">A failed database deployment</span><h4>No patient was harmed.<br><em>People caught the system.</em></h4>
+              <div class="resilience-stats"><div><b>300+</b><span>medication products affected</span></div><div><b>150+</b><span>transactions affected</span></div><div><b>0</b><span>reported patient harm</span></div></div>
+              <span class="source">ISMP Canada · 31 Jul 2025</span>
+            </div>
+          </div>
+
+          <div class="mock-row">
+            <div class="mock-meta"><span class="tag">Environment</span><h3>The corridor becomes a clinical device</h3><p>Environment is not scenery. It carries monitoring, privacy, infection-control, and response assumptions.</p></div>
+            <div class="slide-mock mock-corridor" data-render="09-corridor">
+              <img src="assets/generated/corridor-care.png" alt="Generated documentary view of a hospital corridor used as a temporary care environment">
+              <div class="corridor-copy"><h4>Don't normalize it.</h4><p>But if care is already happening here—what must the system provide?</p></div>
+              <span class="source">Concept inspired by HSSIB temporary care environments · 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="section" style="background:#efefeb">
+      <div class="wrap">
+        <p class="eyebrow">Contemporary content bank</p>
+        <h2>New examples that carry the same idea.</h2>
+        <p class="lede">These are not all additions. They are candidates to replace dated screenshots or collapse longer sequences.</p>
+        <div class="example-grid">
+          <article class="example-card"><span class="year">CANADA · 2025</span><h3>`1 + 1 = 11` medication display</h3><p>A numeral in a morphine brand name sat beside `1 mg/mL`, contributing to repeated 11-fold dosing errors. The product name was changed after reports.</p><a href="https://ismpcanada.ca/bulletin/doloral/">ISMP Canada source</a><div class="caution">Use as a display-and-naming case, not an incidence estimate.</div></article>
+          <article class="example-card"><span class="year">UK · 2024</span><h3>18 Parkinson's doses; only 8 on time</h3><p>Roles, records, e-prescribing, service hours, self-administration, and medication policy intersected during a three-day ED stay.</p><a href="https://www.hssib.org.uk/patient-safety-investigations/medication-related-harm/investigation-report/">HSSIB investigation</a><div class="caution">Do not reduce the outcome to one omitted dose or one clinician.</div></article>
+          <article class="example-card"><span class="year">UK · 2025</span><h3>Fatigue as a managed hazard</h3><p>SEIPS exposes staffing, consecutive shifts, rest facilities, workload, reporting, and a culture that treats endurance as professionalism.</p><a href="https://www.hssib.org.uk/patient-safety-investigations/the-impact-of-staff-fatigue-on-patient-safety/investigation-report/">HSSIB investigation</a><div class="caution">The report warns that the scale of fatigue-related harm is poorly measured.</div></article>
+          <article class="example-card"><span class="year">USA · 2025 DRAFT</span><h3>Pulse oximetry across skin tones</h3><p>Device performance, validation samples, lab methods, labelling, procurement, and clinical interpretation form one sociotechnical system.</p><a href="https://www.fda.gov/news-events/press-announcements/fda-proposes-updated-recommendations-help-improve-performance-pulse-oximeters-across-skin-tones">FDA proposed recommendations</a><div class="caution">Discuss skin pigmentation directly; race is an imperfect proxy.</div></article>
+          <article class="example-card"><span class="year">AI · 2026</span><h3>Same algorithm, different system</h3><p>Across four hospitals, the same sepsis model produced materially different discrimination, positive predictive value, and alert burden. Workflow and threshold choices determine what the model becomes in practice.</p><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2845595">JAMA Network Open study</a><div class="caution">This was a prognostic evaluation, not evidence that the model improved patient outcomes.</div></article>
+          <article class="example-card"><span class="year">CANADA · 2025</span><h3>A near miss with 300 products affected</h3><p>A database-import failure corrupted automated dispensing data. Frontline detection and emergency preparedness prevented reported harm.</p><a href="https://ismpcanada.ca/bulletin/automated-dispensing-cabinets/">ISMP Canada bulletin</a><div class="caution">Use to teach resilience and recovery, not only failure.</div></article>
+          <article class="example-card"><span class="year">UK · 2026</span><h3>The corridor is now a clinical device</h3><p>Temporary care spaces inherit requirements for monitoring, oxygen, suction, call bells, privacy, infection control, response, and governance.</p><a href="https://www.hssib.org.uk/patient-safety-investigations/patient-care-in-temporary-care-environments/investigation-report/">HSSIB investigation</a><div class="caution">The report also documents thoughtful local mitigations.</div></article>
+          <article class="example-card"><span class="year">UK · 2026</span><h3>Electronic prescribing creates new species of error</h3><p>Configuration, interoperability, procurement, local governance, prompts, and maintenance determine safety—not the software name alone.</p><a href="https://www.hssib.org.uk/patient-safety-investigations/medication-related-harm/fourth-investigation-report/">HSSIB investigation</a><div class="caution">Keep distinct events distinct; do not bundle them into one causal claim.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section teal">
+      <div class="wrap">
+        <p class="eyebrow">Companion documents</p>
+        <h2>Minimal slides. Full reasoning elsewhere.</h2>
+        <p class="lede">The presenter deck should not become the handout. These documents carry the evidence, caveats, and reading alignment.</p>
+        <div class="resource-row">
+          <a class="resource" href="adversarial-critique.md"><strong>Full adversarial critique</strong><span>Slide ranges, ranked issues, pacing, visual system, and evidence guardrails.</span></a>
+          <a class="resource" href="reading-map.md"><strong>Reading-to-lecture map</strong><span>All four required and nine optional readings mapped to their 2026 role.</span></a>
+          <a class="resource" href="visual-philosophy.md"><strong>Consequential Clarity</strong><span>The visual philosophy behind these rendered studies.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Recommended next pass</p>
+        <h2>Five changes before cosmetic redesign.</h2>
+        <ol class="priority-list">
+          <li><div><strong>Install the language.</strong><span>Make `USE ERROR`, not `USER ERROR`, appear in the opening, at every case debrief, and in the final bookend.</span></div></li>
+          <li><div><strong>Choose the diagnostic and action spines.</strong><span>SEIPS/Human-Tech Ladder explains the system; the Hierarchy of Intervention Effectiveness tests the response.</span></div></li>
+          <li><div><strong>Select one capstone.</strong><span>Keep the best complete before/after clinical case. Move at least one of the Medly, refugee-response, or COVID portfolios out of the introduction.</span></div></li>
+          <li><div><strong>Replace evidence screenshots with evidence slides.</strong><span>One number, one crop, one source. Keep the paper page in notes.</span></div></li>
+          <li><div><strong>End with resilience.</strong><span>Show that people are often the system's successful last defense, then close on design for detection and recovery.</span></div></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>HQRS 846 · Human Factors in Healthcare · 2026 lecture review</span><span>Source deck: 2025 Cafazzo compressed PDF · Read-only review</span></div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.direction-panel');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(tab.dataset.target).classList.add('active');
+    }));
+
+    document.querySelectorAll('.reveal').forEach(button => {
+      button.addEventListener('click', () => {
+        const slide = button.closest('.mock-doloral');
+        slide.classList.toggle('revealed');
+        button.textContent = slide.classList.contains('revealed') ? 'Reset' : 'Reveal';
+      });
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
