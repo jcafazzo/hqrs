@@ -21,6 +21,16 @@ The published GitHub Pages site is available at:
 
 <https://jcafazzo.github.io/hqrs/>
 
+## 2026 opening prototypes
+
+Three independent 20–30 minute opening studies are available at:
+
+<https://jcafazzo.github.io/hqrs/prototypes/>
+
+- **The Forensic Thread:** one medication journey widened into its work system.
+- **The Museum of Designed Error:** three contemporary object exhibits.
+- **Systems Theatre:** nine groups make and revise causal explanations.
+
 ## Supporting documents
 
 - [Full adversarial critique](adversarial-critique.md)
