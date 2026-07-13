@@ -1,5 +1,7 @@
 # Conditional Evidence
 
+**2026 brand layer:** This direction now operates inside [Causal Tricolour](../queens-visual-philosophy.md): Queen’s Blue replaces near-black, Gold replaces cyan as the signal, Red carries consequence, and White is reserved for evidence and full-screen observation states.
+
 Conditional Evidence treats darkness as an unfinished explanation. Form emerges only where attention has earned it: a lit edge, a measured interval, a single mark accumulating context. Space is analytical rather than empty, with concentric fields and quiet coordinates implying that every visible action sits inside larger, initially unseen conditions. The composition must feel meticulously crafted, as though every interval and alignment survived hours of scrutiny by someone at the top of their field.
 
 Colour behaves like evidence. Near-black holds uncertainty; clinical cyan marks what can be observed; amber signals pressure and constraint; coral is reserved for consequence. No hue is decorative. Each appears with painstaking precision and changes the meaning of the space it touches. Surfaces should feel calibrated rather than styled, the product of deep expertise in contrast, projection, and visual perception.

@@ -8,15 +8,21 @@ const forensicSources = {
 
 const scheduledDoses = Array.from({ length: 18 }, () => '<span class="dose on-time"></span>').join('');
 const outcomeDoses = Array.from({ length: 18 }, (_, i) => `<span class="dose ${i < 8 ? 'on-time' : i < 11 ? 'close' : ''}"></span>`).join('');
+const observation = ({ title, section, time, image, alt, credit, source, note, cover = false }) => ({
+  title, section, time, className: 'source-inspection', brand: false,
+  html: `<p class="inspection-cue">Observe</p><img class="inspection-image${cover ? ' cover' : ''}" src="${image}" alt="${alt}"><div class="inspection-credit"><strong>Original source</strong><span>${credit}</span></div>`,
+  source,
+  note
+});
 
 window.DECK = {
   title: 'The Forensic Thread · HQRS 846',
   shortTitle: 'The Forensic Thread',
-  runtime: '25:30',
+  runtime: '28:30',
   theme: 'forensic',
   slides: [
     {
-      title: '08:00', section: 'Act I · Attribution', time: '0', className: 'casefile center',
+      title: '08:00', section: 'Act I · Attribution', time: '0', className: 'casefile brand-monument center',
       html: `<div class="display-number" style="font-family:ui-monospace,monospace;font-size:16cqw;letter-spacing:-.1em">08:00</div>`,
       note: 'Let the room settle. “For most medications, eight o’clock is a time.” Pause.'
     },
@@ -38,14 +44,22 @@ window.DECK = {
       source: forensicSources.parkinson,
       note: 'State the numbers once, then hold three seconds. Do not simplify this to ten omitted doses.'
     },
+    observation({
+      title: 'Observe the official finding', section: 'Act I · Attribution', time: '1',
+      image: '../assets/source-images/forensic/hssib-parkinsons-executive-summary-8-of-18.png',
+      alt: 'Full-screen HSSIB executive-summary excerpt stating seven doses were missed, three late, and eight of eighteen on time',
+      credit: 'HSSIB, 2024 · Time-critical Parkinson’s medication · executive-summary excerpt',
+      source: forensicSources.parkinson,
+      note: 'The source now owns the whole screen. Ask students to read the three numbers from the back row before interpreting them.'
+    }),
     {
       title: 'Whose error?', section: 'Act I · Attribution', time: '2', className: 'casefile top',
       html: `<p class="eyebrow">First attribution</p><h1 class="hero wide">Whose error<br>was this?</h1><div class="grid-4" style="margin-top:4cqw"><div class="card"><h3>Patient</h3></div><div class="card"><h3>Nurse</h3></div><div class="card"><h3>Doctor</h3></div><div class="card"><h3>System</h3></div></div><div class="prompt">What fact did you assume?</div>`,
       note: 'Ask for a fast point or one-to-four fingers, then 30 seconds with a neighbour. Never ask anyone to defend a blame judgment.'
     },
     {
-      title: 'Fallibility is the premise', section: 'Act I · Attribution', time: '3', className: 'cyan center',
-      html: `<h1 class="hero wide">Humans are fallible.<br>We will err.</h1><p class="lede">Fallibility is a design requirement—not a verdict.</p>`,
+      title: 'Fallibility is the premise', section: 'Act I · Attribution', time: '3', className: 'photo-fill generated-photo',
+      html: `<img src="../../assets/generated/system-conditions.png" alt="Original editorial image of a clinician responding to an infusion-pump condition"><div class="photo-copy"><p class="eyebrow">Human factors premise</p><h1 class="hero wide">Humans are fallible.<br>We will err.</h1><p class="lede">Fallibility is a design requirement—not a verdict.</p></div><div class="photo-credit"><strong>Original image</strong> · GPT Image 2 · HQRS 846, 2026</div>`,
       note: 'That includes the patient, nurse, physician, pharmacist, and us. Accountability and system learning remain different questions.'
     },
     {
@@ -67,8 +81,8 @@ window.DECK = {
       note: 'HSSIB says corridor care created additional challenges and may have limited opportunities to store home medication. Preserve “may.”'
     },
     {
-      title: 'The environment is not scenery', section: 'Act II · Widen', time: '6', className: 'photo-fill',
-      html: `<img src="../assets/source-images/forensic/hssib-temporary-care-corridor-trolleys.jpg" alt="Hospital trolleys being used in a temporary corridor care environment"><div class="photo-copy"><p class="eyebrow">Temporary care environments</p><h1 class="hero small">Not designed.<br>Not staffed.<br>Not equipped.</h1><p class="lede">The environment is part of the medication system.</p></div><div class="photo-credit">© HSSIB, 2026 · Figure 1 · temporary care environment</div>`,
+      title: 'The environment is not scenery', section: 'Act II · Widen', time: '6', className: 'photo-fill generated-photo',
+      html: `<img src="../../assets/generated/corridor-care.png" alt="Original editorial image of hospital corridor care with beds, equipment, and privacy screens"><div class="photo-copy"><p class="eyebrow">Temporary care environments</p><h1 class="hero small">Not designed.<br>Not staffed.<br>Not equipped.</h1><p class="lede">The environment is part of the medication system.</p></div><div class="photo-credit"><strong>Original image</strong> · GPT Image 2 · HQRS 846, 2026</div>`,
       source: forensicSources.corridor,
       note: 'The 2026 corridor investigation is separate from the 2024 case. Use it to generalize the environmental design problem, not add facts to the patient’s story.'
     },
@@ -102,12 +116,28 @@ window.DECK = {
       source: forensicSources.seips,
       note: 'Name the categories quickly; do not lecture the diagram. The exact stage labels are simplified from SEIPS 2.0.'
     },
+    observation({
+      title: 'Observe the work system', section: 'Act II · Widen', time: '12',
+      image: '../assets/source-images/shared/seips-2-figure-1-crop.png',
+      alt: 'Full-screen original SEIPS 2.0 model showing the work system, processes, outcomes, and adaptation',
+      credit: 'Holden et al., 2013 · SEIPS 2.0 · Figure 1 · Required Reading 4',
+      source: forensicSources.seips,
+      note: 'Give the room twenty seconds to trace one path from work-system conditions to outcomes and adaptation.'
+    }),
     {
       title: 'A configuration that could not keep time', section: 'Act II · Widen', time: '13', className: 'casefile evidence-split',
       html: `<div><p class="eyebrow">Not one broken link</p><h1 class="hero small">A configuration that could not reliably keep time.</h1><p class="lede">Why did safe care require heroic memory and coordination?</p></div><figure class="source-figure"><img src="../assets/source-images/forensic/hssib-parkinsons-care-model.png" alt="HSSIB CARe model showing demand, capacity, adaptations, and outcomes"><figcaption class="attribution">© HSSIB, 2024 · Investigation CARe model · original figure</figcaption><span class="figure-tag">Source model</span></figure>`,
       source: forensicSources.parkinson,
       note: 'Configuration is not a single root cause. The report presents interacting factors and learning prompts.'
     },
+    observation({
+      title: 'Observe the case configuration', section: 'Act II · Widen', time: '13',
+      image: '../assets/source-images/forensic/hssib-parkinsons-care-model.png',
+      alt: 'Full-screen HSSIB CARe model showing demand, capacity, adaptations, and outcomes in the Parkinson medication case',
+      credit: 'HSSIB, 2024 · Investigation CARe model · demand, capacity, adaptations, outcomes',
+      source: forensicSources.parkinson,
+      note: 'Ask students to identify where a reasonable local adaptation appears in the source model.'
+    }),
     {
       title: 'Nine groups, three targets', section: 'Investigation', time: '14', className: 'teal top',
       html: `<p class="eyebrow" style="color:#9ff7ff">Nine groups · 90 seconds</p><h1 class="hero small">Redesign one property.</h1><div class="choice-grid" style="margin-top:3cqw"><div class="choice"><strong>Visible</strong><span>Groups 1 · 4 · 7</span></div><div class="choice"><strong>Owned</strong><span>Groups 2 · 5 · 8</span></div><div class="choice"><strong>Recoverable</strong><span>Groups 3 · 6 · 9</span></div></div><div class="prompt">It must work at 03:00, in a corridor, during downtime.</div>`,
@@ -125,12 +155,28 @@ window.DECK = {
       source: forensicSources.fatigue,
       note: 'Do not retrofit fatigue into the Parkinson case. A separate HSSIB investigation supports using fatigue as a redesign stress-test and says the scale of related harm remains poorly measured.'
     },
+    observation({
+      title: 'Observe fatigue as a reporting system', section: 'Act III · Stress-test', time: '19',
+      image: '../assets/source-images/forensic/hssib-fatigue-reporting-behaviour.png',
+      alt: 'Full-screen HSSIB systems diagram of factors influencing fatigue reporting behaviour',
+      credit: 'HSSIB, 2025 · Figure 1 · factors affecting fatigue reporting behaviour',
+      source: forensicSources.fatigue,
+      note: 'Let the room scan the whole causal network. The teaching move is that reporting behaviour is produced by conditions, not personality alone.'
+    }),
     {
       title: 'Which intervention survives?', section: 'Act III · Stress-test', time: '20', className: 'paper-grid evidence-split reverse',
       html: `<figure class="source-figure crop"><img src="../assets/source-images/forensic/hssib-temporary-care-adapted-corridor-call-bell.jpg" alt="Adapted corridor care spaces with electrical points, oxygen, and call bell infrastructure"><figcaption class="attribution">© HSSIB, 2026 · Figure 4 · practical corridor-care mitigation</figcaption><span class="figure-tag">Mitigation in practice</span></figure><div><p class="eyebrow">The worst ordinary day</p><div class="layer-stack"><div class="layer" style="border-color:var(--coral);opacity:.5"><strong>Remember</strong><span>Be more careful</span></div><div class="layer" style="border-color:var(--amber)"><strong>Alert</strong><span>Who owns it? What closes the loop?</span></div><div class="layer" style="border-color:var(--teal)"><strong>System</strong><span>Visible · owned · recoverable</span></div></div><h1 class="hero small" style="margin-top:2.6cqw">Which intervention survives?</h1></div>`,
       source: forensicSources.corridor,
       note: 'Education and alerts can contribute. The test is whether success remains dependent on perfect attention at the worst moment.'
     },
+    observation({
+      title: 'Observe the environment redesign', section: 'Act III · Stress-test', time: '20',
+      image: '../assets/source-images/forensic/hssib-temporary-care-adapted-corridor-call-bell.jpg',
+      alt: 'Full-screen HSSIB photograph of adapted corridor-care spaces with electrical points, oxygen, and call bell infrastructure',
+      credit: 'HSSIB, 2026 · Figure 4 · practical corridor-care mitigation',
+      source: forensicSources.corridor,
+      note: 'Ask what changed in the environment and what risks still remain. The photograph should be examined, not glanced at.'
+    }),
     {
       title: 'A safer configuration', section: 'Act III · Stress-test', time: '22', className: 'casefile center',
       html: `<p class="eyebrow">Concept design · not validated intervention</p><div class="timeline" style="width:94%"><div class="event"><strong>Arrival</strong></div><div class="event"><strong>Status</strong><span>time critical</span></div><div class="event"><strong>Owner</strong><span>named</span></div><div class="event"><strong>Due</strong><span>administer or escalate</span></div></div><h1 class="hero small" style="margin-top:4cqw"><span class="accent">Anticipate.</span> Detect. Recover.</h1><p class="lede">Downtime · corridor · after hours · supported self-administration</p>`,
@@ -138,7 +184,7 @@ window.DECK = {
       note: 'This is a specification, not a solution. Local workflow study, co-design, usability testing, balancing measures, and outcome evaluation would be required.'
     },
     {
-      title: 'The new habit', section: '', time: '25', className: 'casefile center',
+      title: 'The new habit', section: '', time: '25', className: 'casefile brand-monument center',
       html: `<div class="reframe" style="width:72%"><div class="statement"><span class="strike">USER ERROR</span></div><div class="arrow">→</div><div class="statement" style="color:var(--cyan)">USE ERROR</div></div><h1 class="hero wide" style="margin-top:4cqw">People will err.<br><span class="accent">Systems decide what happens next.</span></h1>`,
       note: 'Close by naming the four questions: what made error likely, whether it was detectable, whether recovery was possible, and whether it reached the patient. Hold five seconds.'
     }

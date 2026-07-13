@@ -2,7 +2,7 @@
 
 ## The promise
 
-**A genuinely independent 25-minute opening for HQRS 846**
+**A genuinely independent 29-minute opening for HQRS 846**
 **Audience:** 44–45 graduate clinicians and life-science professionals
 **Learner transformation:** from “Who failed?” to “What made this action seem reasonable, and what should the system do next?”
 
@@ -17,7 +17,7 @@ The order matters. Doloral teaches **designed meaning**. Pulse oximetry teaches 
 
 ## Stage language
 
-- Use a black room and near-black slides (`#0B0D0F`) as the museum wall. Warm white (`#F7F7F5`) is the label. HHF cyan (`#08BFD5`) marks a system defence; coral (`#FF5A52`) marks a violated expectation, never a person.
+- Use Queen’s Blue (`#002452`) as the museum wall and White as the evidence plane. Gold (`#FABD0F`) marks a signal or recovery; Red (`#B90E31`) marks a violated expectation, never a person.
 - One object occupies 55–75% of the 16:9 field. Preserve believable physical scale: a medicine label should feel hand-sized, the pulse oximeter finger-sized, and the ADC drawer body-sized. Avoid browser screenshots.
 - Build the three exhibit objects from scratch. The Doloral display must be labelled **re-creation**. For the ADC, use a drawer-front reconstruction plus the two discordant medication forms; do not imply access to the unidentified hospital's device.
 - Put sources in a restrained 24–28 px line at bottom left. The evidence belongs in presenter notes and the companion page, not in dense projected prose.
@@ -25,9 +25,9 @@ The order matters. Doloral teaches **designed meaning**. Pulse oximetry teaches 
 - If physical props are available, place a pulse oximeter and a reconstructed medication label on a black plinth downstage. Pick up the object only after its first projected close-up. The object is the co-presenter.
 - Silence is part of the design: hold the first image of each exhibit for three seconds before speaking.
 
-## 22 manual slide/click states — 25:30 total
+## 22 narrative beats + 6 observation states — 29:00 total
 
-Each numbered entry is one manual advance. Where an element separates, fades, or shifts **within** an entry, it is a short automatic entrance triggered by that advance; it must not add another presenter click. This keeps the live deck to exactly 22 controllable states.
+Each numbered entry remains a narrative beat. Six full-screen `OBSERVE` states now follow the Doloral display, authorized fields, both FDA pages, ADC frameshift, and staged-deployment figure. Where an element separates, fades, or shifts **within** an entry, it is a short automatic entrance triggered by that advance.
 
 ### Exhibit entrance — establish the ritual (0:00–0:55)
 

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinematic Stage · Queen's Brand Test</title>
+  <style>
+    :root {
+      --queens-blue: #002452;
+      --queens-red: #b90e31;
+      --queens-gold: #fabd0f;
+      --paper: #f7f4ed;
+      --ink: #07111f;
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: #07111f; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: white;
+      background:
+        radial-gradient(circle at 50% -15%, rgba(0, 36, 82, .8), transparent 38rem),
+        #07111f;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .gallery {
+      width: min(100% - 48px, 1600px);
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .gallery-header p,
+    .gallery-header h1 { margin: 0; }
+
+    .gallery-header p {
+      color: var(--queens-gold);
+      font-size: 18px;
+      font-weight: 750;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .gallery-header h1 {
+      margin-top: 8px;
+      font-size: clamp(40px, 5vw, 78px);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+
+    .gallery-header .note {
+      max-width: 34ch;
+      color: rgba(255, 255, 255, .68);
+      font-size: 18px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .test {
+      margin: 0 0 54px;
+    }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--queens-blue);
+      box-shadow: 0 36px 110px rgba(0, 0, 0, .42);
+    }
+
+    .test > figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 2px 0;
+      color: rgba(255, 255, 255, .7);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .test > figcaption strong {
+      color: white;
+      font-size: 20px;
+    }
+
+    .tricolour-edge {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 16px;
+      display: grid;
+      grid-template-columns: 1fr .42fr .22fr;
+    }
+
+    .tricolour-edge span:nth-child(1) { background: var(--queens-blue); }
+    .tricolour-edge span:nth-child(2) { background: var(--queens-red); }
+    .tricolour-edge span:nth-child(3) { background: var(--queens-gold); }
+
+    .slide--teaching .photograph {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 64% 50%;
+      filter: saturate(.72) contrast(1.08);
+    }
+
+    .slide--teaching::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0, 36, 82, .99) 0%, rgba(0, 36, 82, .91) 36%, rgba(0, 36, 82, .5) 63%, rgba(0, 36, 82, .12) 100%),
+        linear-gradient(0deg, rgba(0, 18, 43, .78) 0%, transparent 42%);
+    }
+
+    .slide--teaching::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      width: 18px;
+      height: 39%;
+      background: var(--queens-red);
+    }
+
+    .wordmark-field {
+      position: absolute;
+      top: 16px;
+      right: 0;
+      width: 360px;
+      height: 126px;
+      display: grid;
+      place-items: center;
+      padding: 26px 32px;
+      background: rgba(247, 244, 237, .97);
+    }
+
+    .wordmark-field img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .teaching-copy {
+      position: absolute;
+      left: 7.2%;
+      top: 50%;
+      width: min(76%, 1100px);
+      transform: translateY(-47%);
+    }
+
+    .teaching-copy .eyebrow {
+      margin: 0 0 30px;
+      color: var(--queens-gold);
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .teaching-copy h2 {
+      max-width: 10.2ch;
+      margin: 0;
+      font-size: clamp(70px, 7.7vw, 124px);
+      line-height: .87;
+      letter-spacing: -.068em;
+      font-weight: 780;
+      text-wrap: balance;
+    }
+
+    .teaching-copy h2 span {
+      display: block;
+      margin-top: .1em;
+      color: var(--queens-gold);
+    }
+
+    .teaching-source {
+      position: absolute;
+      right: 42px;
+      bottom: 34px;
+      max-width: 34ch;
+      color: white;
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 650;
+      text-align: right;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .75);
+    }
+
+    .slide--observe {
+      background: white;
+    }
+
+    .slide--observe .evidence {
+      position: absolute;
+      inset: 24px 22px 92px;
+      width: calc(100% - 44px);
+      height: calc(100% - 116px);
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .look-cue {
+      position: absolute;
+      z-index: 3;
+      top: 44px;
+      left: 40px;
+      margin: 0;
+      padding: 12px 22px 10px;
+      color: white;
+      background: var(--queens-red);
+      font-size: 62px;
+      line-height: .84;
+      letter-spacing: -.035em;
+      font-weight: 850;
+      box-shadow: 10px 10px 0 var(--queens-gold);
+    }
+
+    .observation-credit {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      padding: 10px 42px;
+      color: white;
+      background: var(--queens-blue);
+      border-top: 10px solid var(--queens-gold);
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 680;
+    }
+
+    body.capture { overflow: hidden; background: #000; }
+    body.capture .gallery { width: 1600px; margin: 0; padding: 0; }
+    body.capture .gallery-header,
+    body.capture .test,
+    body.capture .test > figcaption { display: none; }
+    body.capture .test.is-capture { display: block; margin: 0; }
+    body.capture .slide { width: 1600px; height: 900px; }
+
+    body.contact { min-height: 900px; overflow: hidden; }
+    body.contact .gallery {
+      width: 1600px;
+      min-height: 900px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-content: center;
+      gap: 34px 28px;
+      padding: 44px;
+    }
+    body.contact .gallery-header { grid-column: 1 / -1; margin: 0; }
+    body.contact .test {
+      display: block;
+      margin: 0;
+    }
+    body.contact .slide { display: none; }
+    body.contact .test::before {
+      content: "";
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: center / cover no-repeat;
+    }
+    body.contact .test:nth-of-type(1)::before {
+      background-image: url("renders/slide-01.png");
+    }
+    body.contact .test:nth-of-type(2)::before {
+      background-image: url("renders/slide-02.png");
+    }
+    body.contact .test > figcaption { align-items: start; min-height: 72px; }
+    body.contact .test > figcaption span { max-width: 24ch; text-align: right; }
+
+    @media (max-width: 900px) {
+      .gallery { width: min(100% - 24px, 1600px); padding-top: 28px; }
+      .gallery-header { align-items: start; flex-direction: column; }
+      .gallery-header .note { text-align: left; }
+      .wordmark-field { width: 23%; height: 14%; padding: 2% 2.2%; }
+      .teaching-copy .eyebrow { margin-bottom: 2%; font-size: 1.75vw; }
+      .teaching-copy h2 { font-size: 7.7vw; }
+      .teaching-source { right: 2.6%; bottom: 3.7%; font-size: 1.65vw; }
+      .look-cue { top: 5%; left: 2.5%; padding: .8% 1.4%; font-size: 3.9vw; box-shadow: .65vw .65vw 0 var(--queens-gold); }
+      .observation-credit { min-height: 8.7%; padding: .6% 2.6%; border-top-width: .6vw; font-size: 1.75vw; }
+    }
+  </style>
+</head>
+<body>
+  <main class="gallery">
+    <header class="gallery-header">
+      <div>
+        <p>Queen's identity test 02</p>
+        <h1>Cinematic Stage</h1>
+      </div>
+      <p class="note">Photography carries the story. Queen's Blue holds the room; Red marks causality; Gold marks the moment to notice.</p>
+    </header>
+
+    <figure class="test">
+      <article class="slide slide--teaching" aria-label="Cinematic teaching slide">
+        <div class="tricolour-edge" aria-hidden="true"><span></span><span></span><span></span></div>
+        <img class="photograph" src="../../assets/source-images/theatre/hssib-tce-figure-1-corridor.jpg" alt="Beds and clinical equipment in a temporary corridor care environment">
+        <div class="wordmark-field">
+          <img src="queens-emblem-right-v3.png" alt="Queen's University">
+        </div>
+        <div class="teaching-copy">
+          <p class="eyebrow">HQRS 846 · Human factors in health care</p>
+          <h2>Any of us.<span>Given the circumstances.</span></h2>
+        </div>
+        <div class="teaching-source">Original photograph · © HSSIB, 2026</div>
+      </article>
+      <figcaption><strong>01 · Normal teaching state</strong><span>One proposition, one image, one causal-red intervention.</span></figcaption>
+    </figure>
+
+    <figure class="test">
+      <article class="slide slide--observe" aria-label="Full-screen evidence observation slide">
+        <div class="tricolour-edge" aria-hidden="true"><span></span><span></span><span></span></div>
+        <img class="evidence" src="../../assets/source-images/theatre/esm-v2-figure-2-v1-comparison.jpg" alt="JAMA Network Open comparison of Epic Sepsis Model versions across four health systems">
+        <p class="look-cue">LOOK</p>
+        <div class="observation-credit">Wong et al., 2026 · JAMA Network Open · Figure 2 · CC BY</div>
+      </article>
+      <figcaption><strong>02 · Back-row observation state</strong><span>No frame, no interpretation layer, no miniature source.</span></figcaption>
+    </figure>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const capture = Number(params.get('capture'));
+    if (capture === 1 || capture === 2) {
+      document.body.classList.add('capture');
+      document.querySelectorAll('.test')[capture - 1].classList.add('is-capture');
+    }
+    if (params.has('contact')) document.body.classList.add('contact');
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 ## The taste
 
-This is a genuinely independent **25:30 opening**, not the existing opening with new skins. One contemporary event is viewed first as an apparent medication error and then reopened, layer by layer, until the room can no longer sustain a person-first explanation. The story never leaves the case; corridor care is already one of its conditions, and fatigue is introduced only as a later stress-test of the proposed redesign.
+This is a genuinely independent **28:30 opening**, not the existing opening with new skins. One contemporary event is viewed first as an apparent medication error and then reopened, layer by layer, until the room can no longer sustain a person-first explanation. The story never leaves the case; corridor care is already one of its conditions, and fatigue is introduced only as a later stress-test of the proposed redesign.
 
 The transformation is simple:
 
@@ -13,22 +13,24 @@ The protected phrase is `USE ERROR`, not `USER ERROR`. The analytical habit is: 
 ### Performance parameters
 
 - **Audience:** 44–45 graduate clinicians and life-science professionals, seated as nine groups of approximately five.
-- **Nominal runtime:** 25:30; performance range 23–29 minutes depending on discussion.
-- **Format:** 22 projected click-states, including one 3:45 group investigation.
+- **Nominal runtime:** 28:30; performance range 26–32 minutes depending on discussion.
+- **Format:** 27 projected click-states: 22 narrative beats, five dedicated back-row observation states, and one 3:45 group investigation.
 - **Stagecraft:** presenter-led; almost no text that could function as a handout; silence, hard cuts, and causal reveals carry the argument.
 - **Case identity:** use “the patient” throughout, as HSSIB does. Do not invent a name, face, or composite biography.
 - **Ethical stance:** the event is not entertainment and the patient's death is not used as a causal punchline.
 
 ## Visual and motion language
 
-- 16:9, 1920 × 1080. Ink `#0B0D0F`, warm white `#F7F7F5`, HHF cyan `#08BFD5` with ink text, dark teal `#006C75` with white text, coral `#FF5A52` only for a missed expectation.
-- Use a single monospaced treatment only for clock times and the medication schedule. Everything else is SF Pro Display, Helvetica Neue, or the closest licensed equivalent.
+- 16:9, 1920 × 1080. Queen’s Blue `#002452` is the stage, Gold `#FABD0F` the signal, Red `#B90E31` consequence, White evidence space, and `#212121` the on-screen black.
+- Use a single monospaced treatment only for clock times and the medication schedule. Everything else is Open Sans or the closest system sans equivalent.
 - The recurring object is an **18-position medication timeline**, not a stock photograph. It begins as a pristine schedule and becomes surrounded by system conditions.
 - Avoid a literal detective-board aesthetic—no red string, fingerprints, magnifying glasses, or crime imagery. “Forensic” means disciplined reconstruction, not criminality.
 - Hard cuts for moral claims; 350–450 ms spatial moves when the system boundary expands; 180–250 ms dissolves for contextual imagery. One causal layer per click.
 - Source labels sit at 24–28 px in the lower-left. They remain readable but never compete with the dramatic content.
 
-## 22-state storyboard
+## 22 narrative beats + 5 full-screen observation states
+
+The numbered beats below remain the performance spine. Five `OBSERVE` states now follow the executive-summary excerpt, SEIPS figure, CARe model, fatigue map, and corridor mitigation photograph so students at the back can inspect the original source at maximum useful size.
 
 ### Act I — The attribution trap (00:00–05:30)
 

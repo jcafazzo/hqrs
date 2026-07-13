@@ -1,0 +1,11 @@
+# Cinematic Stage
+
+Cinematic Stage treats the lecture as a performance surface, not a document projected onto a wall. The normal teaching state has a single spoken proposition, a single photographic field, and one deliberate interruption in Queen's Red. Queen's Blue is the dominant atmosphere because it holds contrast over photography and feels authoritative without becoming corporate chrome. Queen's Gold is used sparingly as the perceptual signal: it identifies the sentence or evidence the room should retain.
+
+The Queen's tricolour is not a decorative gradient. It is a restrained edge system: Blue establishes the field, Red marks causality or risk, and Gold signals attention. This keeps all three official colours pervasive while allowing the slide to remain visually quiet. The horizontal Queen's wordmark is used unmodified on a warm-paper field with clear space around the full emblem and lettering; it acts as a stage signature rather than a repeated watermark.
+
+Scale is designed for the back row. The core statement is set at approximately 100–124 pixels on a 1600×900 canvas, while attribution never drops below 26 pixels. Photography extends to the edge and supplies context that words would otherwise over-explain. There are no cards, dashboard components, framed screenshots, or tiny explanatory captions competing with the presenter's voice.
+
+Evidence receives a different state because observation and interpretation are different classroom actions. When students need to inspect an original figure, the source becomes the slide: white field, edge-to-edge image, large LOOK cue, and one concise attribution line. The following slide can then return to a distilled interpretation, allowing the lecturer to control attention rather than asking students to decode a miniature figure while also listening.
+
+The tradeoff is intentional theatricality. Large photography and sparse copy make the presenter responsible for connective explanation, and the asymmetric image treatment is less suitable for unattended handouts. For a live two-hour graduate seminar, however, this direction protects the established Jobs/TED rhythm while giving Queen's identity a confident, disciplined role and making source evidence genuinely legible from the back of the room.

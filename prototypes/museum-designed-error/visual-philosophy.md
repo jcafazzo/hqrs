@@ -1,5 +1,7 @@
 # Object Witness
 
+**2026 brand layer:** This direction now operates inside [Causal Tricolour](../queens-visual-philosophy.md): Queen’s Blue is the museum wall, Gold the signal, Red the violated expectation, and White the evidence plane. Original GPT Image 2 scenes and dedicated observation slides extend the object-theatre vocabulary.
+
 Object Witness gives ordinary artifacts the authority of sculpture. A warm, nearly empty field surrounds one monumental form, allowing shape, proportion, and adjacency to carry the argument before language arrives. The object is not illustrated casually; it is isolated and studied with painstaking attention, as if a master exhibition designer had spent countless hours deciding its exact scale and distance from the wall.
 
 Typography behaves like museum interpretation: a small accession number, a precise title, a restrained annotation. Words never compete with the artifact. Black, bone, signal red, instrument teal, and occasional amber form a disciplined material palette. Every colour is calibrated to a function and applied with the confidence of deep expertise, never as decoration or atmosphere alone.

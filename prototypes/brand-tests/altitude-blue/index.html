@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Altitude Blue · Queen's HQRS brand test</title>
+  <style>
+    :root {
+      --queens-blue: #002452;
+      --queens-gold: #FABD0F;
+      --queens-red: #B90E31;
+      --paper: #F6F3EB;
+      --mist: #E7EDF2;
+      --ink: #101924;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: #07182e;
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 68px 36px 96px;
+      background:
+        radial-gradient(circle at 72% -4%, rgba(250, 189, 15, .1), transparent 25%),
+        linear-gradient(180deg, #0a2444, #06172b 56%, #04111f);
+    }
+
+    header {
+      width: min(1600px, 100%);
+      margin: 0 auto 34px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .65);
+    }
+
+    header h1 {
+      margin: 6px 0 0;
+      font-size: clamp(36px, 4vw, 62px);
+      letter-spacing: -.05em;
+      line-height: .98;
+    }
+
+    header span {
+      max-width: 34ch;
+      color: rgba(255, 255, 255, .6);
+      font-size: 17px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    main {
+      display: grid;
+      gap: 56px;
+      justify-items: center;
+    }
+
+    .test {
+      width: min(1600px, 100%);
+    }
+
+    .test-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 0 0 12px;
+      color: rgba(255, 255, 255, .7);
+      font-size: 15px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .test-label strong { color: var(--queens-gold); }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 34px 110px rgba(0, 0, 0, .42);
+      isolation: isolate;
+    }
+
+    .teaching {
+      display: grid;
+      align-content: center;
+      padding: 5.4%;
+      color: var(--queens-blue);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(246, 243, 235, .98));
+    }
+
+    .brand-mark {
+      position: absolute;
+      top: 5.2%;
+      right: 4.8%;
+      width: 12.5%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .course-line {
+      position: absolute;
+      top: 6%;
+      left: 5.4%;
+      margin: 0;
+      font-size: clamp(15px, 1.25vw, 21px);
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .course-line b { color: var(--queens-red); }
+
+    .teaching h2 {
+      position: relative;
+      z-index: 5;
+      max-width: 12ch;
+      margin: 0;
+      font-size: clamp(62px, 6.7vw, 112px);
+      line-height: .92;
+      letter-spacing: -.065em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .teaching h2 em {
+      display: block;
+      color: var(--queens-red);
+      font-style: normal;
+    }
+
+    .teaching .subline {
+      position: relative;
+      z-index: 5;
+      max-width: 29ch;
+      margin: 34px 0 0;
+      font-size: clamp(24px, 2.05vw, 35px);
+      line-height: 1.25;
+      letter-spacing: -.025em;
+      color: #48617b;
+    }
+
+    .teaching .path {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .terrain {
+      position: absolute;
+      right: -2%;
+      bottom: -14%;
+      width: 70%;
+      height: 72%;
+      z-index: 1;
+      background: var(--mist);
+      clip-path: polygon(0 68%, 16% 52%, 30% 60%, 49% 30%, 66% 45%, 81% 16%, 100% 26%, 100% 100%, 0 100%);
+    }
+
+    .terrain::before,
+    .terrain::after {
+      content: "";
+      position: absolute;
+      inset: 9% -4% -2% 9%;
+      background: #d4e0e9;
+      clip-path: polygon(0 70%, 17% 55%, 31% 62%, 49% 33%, 67% 48%, 82% 20%, 100% 30%, 100% 100%, 0 100%);
+    }
+
+    .terrain::after {
+      inset: 26% -8% -3% 25%;
+      background: var(--queens-blue);
+      opacity: .09;
+    }
+
+    .gold-pivot {
+      position: absolute;
+      right: 28.35%;
+      bottom: 38.3%;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--queens-gold);
+      box-shadow: 0 0 0 8px rgba(250, 189, 15, .18);
+      z-index: 4;
+    }
+
+    .slide-number {
+      position: absolute;
+      right: 5.2%;
+      bottom: 4.6%;
+      z-index: 5;
+      font-size: clamp(18px, 1.6vw, 27px);
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--queens-blue);
+    }
+
+    .observation {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) 64px;
+      padding: 22px 26px 0;
+      background: var(--paper);
+      color: var(--queens-blue);
+    }
+
+    .observation::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 9px;
+      background: linear-gradient(90deg, var(--queens-blue) 0 72%, var(--queens-gold) 72% 87%, var(--queens-red) 87%);
+      z-index: 3;
+    }
+
+    .source-page {
+      min-height: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    .source-foot {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      min-width: 0;
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+    }
+
+    .source-foot strong {
+      flex: 0 0 auto;
+      color: var(--queens-red);
+      font-size: 26px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .source-foot span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .source-foot img {
+      width: 105px;
+      height: auto;
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 36px 12px 64px; }
+      header { align-items: start; flex-direction: column; }
+      header span { text-align: left; }
+      .test-label { font-size: 11px; }
+      .observation { grid-template-rows: minmax(0, 1fr) 38px; padding: 12px 12px 0; }
+      .source-foot, .source-foot strong { font-size: 10px; }
+      .source-foot { gap: 8px; }
+      .source-foot img { width: 50px; }
+    }
+
+    body:has(.test:target) {
+      padding: 0;
+      background: #000;
+    }
+
+    body:has(.test:target) header,
+    body:has(.test:target) .test:not(:target),
+    body:has(.test:target) .test-label { display: none; }
+
+    body:has(.test:target) main { display: block; }
+    body:has(.test:target) .test { width: 100vw; }
+    body:has(.test:target) .slide {
+      width: 100vw;
+      height: 100vh;
+      aspect-ratio: auto;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <p>HQRS 846 · Queen's brand test</p>
+      <h1>Altitude Blue</h1>
+    </div>
+    <span>Quiet paper landscapes. Evidence becomes terrain. Queen's Blue carries the room.</span>
+  </header>
+
+  <main>
+    <article class="test" id="teaching-test">
+      <div class="test-label"><strong>Test 01</strong><span>Normal teaching slide</span></div>
+      <section class="slide teaching" aria-label="Normal teaching slide: The system made sense until it didn't">
+        <p class="course-line">Human Factors in Health Care <b>· 2026</b></p>
+        <img class="brand-mark" src="../../assets/brand/queens-emblem-right-v3.png" alt="Queen's University">
+        <div class="terrain" aria-hidden="true"></div>
+        <svg class="path" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 810 750 C 940 610, 1015 680, 1100 535 S 1270 470, 1340 335" fill="none" stroke="#002452" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <span class="gold-pivot" aria-hidden="true"></span>
+        <h2>The system made sense—<em>until it didn’t.</em></h2>
+        <p class="subline">The action was reasonable. The conditions were not.</p>
+        <span class="slide-number">01</span>
+      </section>
+    </article>
+
+    <article class="test" id="observation-test">
+      <div class="test-label"><strong>Test 02</strong><span>Back-row observation slide</span></div>
+      <section class="slide observation" aria-label="Back-row observation slide showing the FDA pulse oximetry guidance source page">
+        <img class="source-page" src="../../assets/source-images/museum/fda-guidance-page-35-performance-criteria.png" alt="FDA 2025 draft guidance page 35 excerpt describing pulse oximeter performance analyses">
+        <footer class="source-foot">
+          <strong>Observe</strong>
+          <span>FDA · Pulse Oximeters for Medical Purposes · Draft Guidance, January 2025 · p. 35 excerpt</span>
+          <img src="../../assets/brand/queens-emblem-right-v3.png" alt="Queen's University">
+        </footer>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

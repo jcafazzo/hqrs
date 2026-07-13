@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HQRS 846 · Queen's Brand Tests</title>
+  <style>
+    :root{--blue:#002452;--gold:#fabd0f;--red:#b90e31;--ink:#212121;--paper:#f1f2f2;--line:#d1d3d4}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Open Sans",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .rail{height:9px;background:linear-gradient(90deg,var(--blue) 0 60%,var(--red) 60% 86%,var(--gold) 86%)}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .nav img{width:190px}.nav a{color:var(--blue);font-size:14px;font-weight:750;text-decoration:none}.hero{padding:86px 0 60px}.eyebrow{color:var(--red);font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:800}.hero h1{max-width:9ch;margin:16px 0 24px;color:var(--blue);font-size:clamp(58px,8vw,108px);line-height:.88;letter-spacing:-.065em}.hero p{max-width:42em;margin:0;color:#6a625c;font-size:22px;line-height:1.45}.tests{display:grid;gap:38px;padding-bottom:90px}.test{overflow:hidden;background:#fff;border:1px solid rgba(0,36,82,.1);border-radius:24px;box-shadow:0 24px 70px rgba(0,36,82,.1)}
+    .visual{background:var(--blue);padding:18px}.visual img{display:block;width:100%;height:auto;background:#fff}.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.copy{padding:30px 34px 36px}.copy h2{margin:0 0 10px;color:var(--blue);font-size:34px;letter-spacing:-.04em}.copy p{max-width:52em;margin:0;color:#6a625c;font-size:17px;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.button{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;font-size:14px;font-weight:750}.button.secondary{background:#e6e7e8;color:var(--blue)}
+    .decision{margin-bottom:90px;padding:38px;background:var(--blue);color:#fff;border-top:8px solid var(--gold)}.decision h2{margin:0 0 14px;font-size:42px;letter-spacing:-.04em}.decision p{max-width:56em;margin:0;color:rgba(255,255,255,.78);font-size:18px;line-height:1.55}.decision strong{color:var(--gold)}
+    @media(max-width:700px){.pair{grid-template-columns:1fr}.nav img{width:150px}.hero{padding-top:60px}.copy{padding:25px}.decision{padding:28px}}
+  </style>
+</head>
+<body>
+  <div class="rail"></div>
+  <nav class="wrap nav"><img src="../assets/brand/queens-emblem-right-v3.png" alt="Queen's University"><a href="../">← Opening prototypes</a></nav>
+  <header class="wrap hero"><p class="eyebrow">HQRS 846 · Queen's identity study</p><h1>Three tests.<br>One system.</h1><p>Each test pairs a normal teaching slide with a dedicated back-row observation state. The final decks synthesize their strongest qualities rather than applying one treatment mechanically.</p></header>
+  <main class="wrap tests">
+    <article class="test"><div class="visual"><img src="tricolour-monument/contact-sheet.png" alt="Tricolour Monument teaching and observation slide tests"></div><div class="copy"><h2>Tricolour Monument</h2><p>The clearest Queen’s identity at lecture scale: Blue as the stage, Gold as the signal, Red as consequence, and source material enlarged until the room can actually examine it.</p><div class="actions"><a class="button" href="tricolour-monument/">Open test</a><a class="button secondary" href="tricolour-monument/philosophy.md">Philosophy</a></div></div></article>
+    <article class="test"><div class="visual"><img src="altitude-blue/contact-sheet.png" alt="Altitude Blue teaching and observation slide tests"></div><div class="copy"><h2>Altitude Blue</h2><p>The closest echo of CARE-Agent: one-colour Queen’s mark, white sculptural space, a fine path through evidence, and restrained tricolour accents.</p><div class="actions"><a class="button" href="altitude-blue/">Open test</a><a class="button secondary" href="altitude-blue/philosophy.md">Philosophy</a></div></div></article>
+    <article class="test"><div class="visual pair"><img src="cinematic-stage/renders/slide-01.png" alt="Cinematic Stage teaching slide"><img src="cinematic-stage/renders/slide-02.png" alt="Cinematic Stage observation slide"></div><div class="copy"><h2>Cinematic Stage</h2><p>The strongest bridge to your existing Jobs/TED vocabulary: large original or documentary imagery, one declarative thought, and an institutional tricolour edge that does not compete with the story.</p><div class="actions"><a class="button" href="cinematic-stage/">Open test</a><a class="button secondary" href="cinematic-stage/philosophy.md">Philosophy</a></div></div></article>
+  </main>
+  <section class="wrap decision"><h2>Selected synthesis</h2><p><strong>Monument</strong> for thesis and section moments; <strong>Cinematic Stage</strong> for GPT Image 2 and documentary photography; <strong>Altitude Blue</strong> restraint for evidence-heavy slides. Dedicated OBSERVE states repeat important source pages at maximum useful size.</p></section>
+</body>
+</html>

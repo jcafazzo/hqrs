@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tricolour Monument · Queen's brand test</title>
+  <style>
+    :root {
+      --queens-blue: #002452;
+      --queens-gold: #FABD0F;
+      --queens-red: #B90E31;
+      --ink: #212121;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      color-scheme: dark;
+      background: #0b0f14;
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: clamp(24px, 5vw, 80px);
+      color: var(--white);
+    }
+
+    header,
+    main {
+      width: min(100%, 1600px);
+      margin-inline: auto;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    header p {
+      margin: 0;
+      color: rgba(255,255,255,.58);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      margin: 7px 0 0;
+      font-size: clamp(28px, 4vw, 52px);
+      letter-spacing: -.04em;
+    }
+
+    main {
+      display: grid;
+      gap: clamp(32px, 6vw, 84px);
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: 12px;
+      color: rgba(255,255,255,.62);
+      font-size: 14px;
+    }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      box-shadow: 0 36px 100px rgba(0,0,0,.38);
+      container-type: inline-size;
+    }
+
+    .teaching {
+      display: grid;
+      grid-template-rows: 16.3% 2% 1fr;
+      background: var(--queens-blue);
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4cqw;
+      padding: 2.1cqw 4.5cqw;
+      background: var(--white);
+      color: var(--queens-blue);
+    }
+
+    .course-id {
+      font-size: 1.32cqw;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .course-id span {
+      display: block;
+      margin-top: .45cqw;
+      color: var(--queens-red);
+      font-size: .92cqw;
+      letter-spacing: .1em;
+    }
+
+    .queens-wordmark {
+      display: block;
+      width: 24cqw;
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .tricolour-rule {
+      display: grid;
+      grid-template-columns: 48% 22% 30%;
+    }
+
+    .tricolour-rule::before,
+    .tricolour-rule::after,
+    .tricolour-rule span {
+      content: "";
+      display: block;
+    }
+
+    .tricolour-rule::before { background: var(--queens-red); }
+    .tricolour-rule span { background: var(--queens-gold); }
+    .tricolour-rule::after { background: var(--queens-blue); }
+
+    .teaching-body {
+      position: relative;
+      display: grid;
+      align-content: center;
+      padding: 5.2cqw 6.2cqw 4.8cqw 10.5cqw;
+    }
+
+    .teaching-body::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5.2cqw;
+      background: var(--queens-red);
+    }
+
+    .teaching-body::after {
+      content: "";
+      position: absolute;
+      left: 5.2cqw;
+      top: 0;
+      width: 2.1cqw;
+      height: 100%;
+      background: var(--queens-gold);
+    }
+
+    .kicker {
+      margin: 0 0 1.5cqw;
+      color: var(--queens-gold);
+      font-size: 1.35cqw;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .teaching h2 {
+      max-width: 12ch;
+      margin: 0;
+      font-size: 8.05cqw;
+      line-height: .88;
+      letter-spacing: -.064em;
+      font-weight: 780;
+      text-wrap: balance;
+    }
+
+    .teaching h2 em {
+      color: var(--queens-gold);
+      font-style: normal;
+    }
+
+    .subtitle {
+      max-width: 34ch;
+      margin: 2.2cqw 0 0;
+      color: rgba(255,255,255,.79);
+      font-size: 2.25cqw;
+      line-height: 1.24;
+      letter-spacing: -.025em;
+    }
+
+    .observation {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .observation::before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      inset: 0 auto 0 0;
+      width: 1.4cqw;
+      background: var(--queens-red);
+    }
+
+    .observation-source {
+      position: absolute;
+      z-index: 1;
+      inset: 7.1cqw 0 5.25cqw;
+      width: 100%;
+      height: calc(100% - 12.35cqw);
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .observe-cue {
+      position: absolute;
+      z-index: 4;
+      top: 1.7cqw;
+      left: 4.2cqw;
+      margin: 0;
+      color: var(--queens-blue);
+      font-size: 4.35cqw;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .045em;
+    }
+
+    .observe-cue::after {
+      content: "";
+      display: inline-block;
+      width: 5.4cqw;
+      height: .55cqw;
+      margin: 0 0 .75cqw 1.35cqw;
+      background: var(--queens-gold);
+    }
+
+    .attribution {
+      position: absolute;
+      z-index: 4;
+      right: 2.7cqw;
+      bottom: 1.55cqw;
+      margin: 0;
+      color: var(--queens-blue);
+      font-size: 1.32cqw;
+      line-height: 1.25;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      body { padding-inline: 14px; }
+      figcaption { font-size: 12px; }
+    }
+
+    body.capture {
+      width: 1600px;
+      height: 900px;
+      padding: 0;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    body.capture > header,
+    body.capture figcaption,
+    body.capture figure:not(.capture-target) {
+      display: none;
+    }
+
+    body.capture main,
+    body.capture figure,
+    body.capture .slide {
+      width: 1600px;
+      height: 900px;
+      max-width: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Queen's brand test · HQRS 846</p>
+    <h1>Tricolour Monument</h1>
+  </header>
+
+  <main>
+    <figure>
+      <section class="slide teaching" aria-label="Teaching slide: Use error, not user error">
+        <div class="masthead">
+          <div class="course-id">HQRS 846<span>Human Factors in Health Care</span></div>
+          <img class="queens-wordmark" src="queens-emblem-right-v3.png" alt="Queen's University">
+        </div>
+        <div class="tricolour-rule" aria-hidden="true"><span></span></div>
+        <div class="teaching-body">
+          <p class="kicker">Change the unit of analysis</p>
+          <h2>Use error, <em>not</em> user error.</h2>
+          <p class="subtitle">The person is part of the system. Design for real work under real conditions.</p>
+        </div>
+      </section>
+      <figcaption>Test 01 · Normal teaching slide</figcaption>
+    </figure>
+
+    <figure>
+      <section class="slide observation" aria-label="Observation slide: HSSIB fatigue reporting behaviour system map">
+        <p class="observe-cue">OBSERVE</p>
+        <img class="observation-source" src="../../assets/source-images/forensic/hssib-fatigue-reporting-behaviour.png" alt="HSSIB systems diagram of factors influencing fatigue reporting behaviour">
+        <p class="attribution">© HSSIB, 2025 · Figure 1<br>Factors affecting reporting behaviour</p>
+      </section>
+      <figcaption>Test 02 · Dedicated back-row observation slide</figcaption>
+    </figure>
+  </main>
+
+  <script>
+    const capture = new URLSearchParams(location.search).get('capture');
+    if (capture === '1' || capture === '2') {
+      document.body.classList.add('capture');
+      document.querySelectorAll('main > figure')[Number(capture) - 1].classList.add('capture-target');
+    }
+  </script>
+</body>
+</html>

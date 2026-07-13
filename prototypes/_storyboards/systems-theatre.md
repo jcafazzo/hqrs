@@ -1,6 +1,6 @@
 # Systems Theatre
 
-## Independent 26-minute opening prototype for HQRS 846
+## Independent 30-minute opening prototype for HQRS 846
 
 **Premise:** the room is not an audience watching a safety lecture. It is the instrument. Nine groups make a fast causal attribution, publicly commit to it, receive new system information, and then watch their own language change.
 
@@ -8,7 +8,7 @@
 
 **Anchor:** the Epic Sepsis Model version 2 across four US health systems. The study is especially useful because it resists a simplistic “AI works / AI fails” story. One product family became four local implementations: each site fine-tuned the model on local historical data; patient populations, sepsis prevalence, score thresholds, performance, and the resulting work differed.
 
-**Duration:** 26:30 as written; 22 minutes compressed; 30 minutes with all nine groups reporting.
+**Duration:** 30:00 as written; 26 minutes compressed; 33 minutes with all nine groups reporting.
 
 **Audience geometry:** 44–45 graduate clinicians and life-science professionals, seated as nine mixed-discipline groups of about five.
 
@@ -24,7 +24,7 @@ The dramatic action is not on the screen. It occurs in the room:
 4. The groups redesign the conditions, not the people.
 5. The room repeats its first vote and sees that it has changed.
 
-This preserves Jobs/TED stagecraft—black stage, one idea per frame, hard cuts, silence, controlled reveals—but replaces the charismatic product reveal with a **causal-boundary reveal**. Each click widens the frame.
+This preserves Jobs/TED stagecraft—Queen’s Blue stage, one idea per frame, hard cuts, silence, controlled reveals—but replaces the charismatic product reveal with a **causal-boundary reveal**. Each click widens the frame. Six additional `OBSERVE` states enlarge the two JAMA figures, HSSIB corridor photograph, fatigue map, ADC frameshift, and SEIPS model for the back row.
 
 ---
 

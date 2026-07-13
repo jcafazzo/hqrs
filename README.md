@@ -31,6 +31,12 @@ Three independent 20–30 minute opening studies are available at:
 - **The Museum of Designed Error:** three contemporary object exhibits.
 - **Systems Theatre:** nine groups make and revise causal explanations.
 
+The prototypes now use the official Queen’s tricolour system, six original GPT Image 2 clinical/editorial scenes, and dedicated full-screen observation states for source pages that must be readable from the back of the classroom.
+
+Three Queen’s brand tests and the selected synthesis are available at:
+
+<https://jcafazzo.github.io/hqrs/prototypes/brand-tests/>
+
 ## Supporting documents
 
 - [Full adversarial critique](adversarial-critique.md)

@@ -6,16 +6,21 @@ const museumSources = {
   use: { label: 'FDA · Human factors postmarket information · 2026', url: 'https://www.fda.gov/medical-devices/human-factors-and-medical-devices/human-factors-postmarket-information-device-surveillance-and-reporting-processes' }
 };
 
-const adcCells = Array.from({ length: 64 }, (_, i) => `<span class="adc-cell ${i === 29 ? 'bad' : ''} ${i === 45 ? 'caught' : ''}"></span>`).join('');
+const observation = ({ title, section, time, image, alt, credit, source, note, cover = false }) => ({
+  title, section, time, className: 'source-inspection', brand: false,
+  html: `<p class="inspection-cue">Observe</p><img class="inspection-image${cover ? ' cover' : ''}" src="${image}" alt="${alt}"><div class="inspection-credit"><strong>Original source</strong><span>${credit}</span></div>`,
+  source,
+  note
+});
 
 window.DECK = {
   title: 'The Museum of Designed Error · HQRS 846',
   shortTitle: 'Museum of Designed Error',
-  runtime: '25:30',
+  runtime: '29:00',
   theme: 'museum',
   slides: [
     {
-      title: 'Doors open', section: 'Entrance', time: '0', className: 'dark bottom',
+      title: 'Doors open', section: 'Entrance', time: '0', className: 'dark brand-monument bottom',
       html: `<div style="width:16cqw;height:1.1cqw;background:#f7f3e9;box-shadow:0 -5cqw 12cqw rgba(255,255,255,.12);margin:0 auto 6cqw"></div><p class="eyebrow">HQRS 846 · Gallery 01</p><h1 class="hero wide">The Museum of<br>Designed Error</h1>`,
       note: 'Walk to the empty plinth. “I brought you three objects. Each has been accused of witnessing a human error. Let’s look before we judge.”'
     },
@@ -30,6 +35,14 @@ window.DECK = {
       source: museumSources.doloral,
       note: 'Hold silence for three seconds. Do not ask anyone to confess how they read it. The proximity of the numeral in the brand and concentration was a key contributing factor.'
     },
+    observation({
+      title: 'Observe the drug display', section: 'Exhibit 01 · Meaning', time: '1',
+      image: '../assets/source-images/museum/doloral-figure-1-drug-system-display.jpg',
+      alt: 'Full-screen drug information system display reading Morphine HCL Doloral 1 1 mg per mL',
+      credit: 'ISMP Canada, 2025 · Doloral · Figure 1 · reported drug-information display',
+      source: museumSources.doloral,
+      note: 'Ask everyone to read the concentration from the full-width source. Hold silence long enough for the visual ambiguity to do the teaching.'
+    }),
     {
       title: 'What it appeared to say', section: 'Exhibit 01 · Meaning', time: '2', className: 'center',
       html: `<p class="eyebrow">01 / 03 · Act</p><div class="doloral-display"><span class="brand danger">11</span><span class="strength">mg/mL</span></div><h2 style="font-size:3.2cqw;margin-top:3cqw">An 11-fold dose.</h2>`,
@@ -42,6 +55,14 @@ window.DECK = {
       source: museumSources.doloral,
       note: 'The screen inherited a product name and placed it beside a concentration. Do not say the display alone caused every report.'
     },
+    observation({
+      title: 'Observe the authorized fields', section: 'Exhibit 01 · Meaning', time: '3',
+      image: '../assets/source-images/museum/doloral-figure-2-health-canada-display.jpg',
+      alt: 'Full-screen Health Canada Drug Product Database excerpt showing Doloral product names and strengths',
+      credit: 'ISMP Canada, 2025 · Doloral · Figure 2 · Health Canada database excerpt',
+      source: museumSources.doloral,
+      note: 'Ask which value belongs to the product name and which belongs to concentration. The source is now large enough for the back row to answer.'
+    }),
     {
       title: 'The system changed', section: 'Exhibit 01 · Meaning', time: '4', className: 'center',
       html: `<p class="eyebrow">01 / 03 · Change</p><div class="reframe" style="width:88%"><div class="statement"><span class="strike">DOLORAL 1</span></div><div class="arrow">→</div><div class="statement" style="color:var(--cyan)">DOLORAL</div></div><p class="lede">The numeral was removed from the product name.</p>`,
@@ -55,8 +76,8 @@ window.DECK = {
       note: 'Removing the R removes the person as the end of the explanation—not from the system and not from all questions of accountability.'
     },
     {
-      title: 'The reassuring number', section: 'Exhibit 02 · Measurement', time: '6', className: 'split',
-      html: `<div><p class="eyebrow">02 / 03 · Look</p><h1 class="hero small">What does<br>this number<br>let us stop<br>worrying about?</h1></div><div class="pulse-device"><div class="screen">94</div><div class="button"></div></div>`,
+      title: 'The reassuring number', section: 'Exhibit 02 · Measurement', time: '6', className: 'photo-fill copy-right generated-photo',
+      html: `<img src="../../assets/generated/pulse-oximetry.png" alt="Original editorial image of pulse oximeter sensors on hands across different skin tones"><div class="photo-copy"><p class="eyebrow">02 / 03 · Look</p><h1 class="hero small">What does this number let us stop worrying about?</h1></div><div class="photo-credit"><strong>Original image</strong> · GPT Image 2 · HQRS 846, 2026</div>`,
       source: museumSources.pulse,
       note: 'Take two spontaneous answers. If using a physical device, do not turn the moment into a live accuracy demonstration.'
     },
@@ -78,6 +99,14 @@ window.DECK = {
       source: museumSources.fda,
       note: 'The number is produced by device physics, software, validation evidence, labelling, procurement, and clinical interpretation. Other conditions can also affect accuracy.'
     },
+    observation({
+      title: 'Observe performance criteria', section: 'Exhibit 02 · Measurement', time: '9',
+      image: '../assets/source-images/museum/fda-guidance-page-35-performance-criteria.png',
+      alt: 'Full-screen FDA draft guidance excerpt describing pulse oximeter performance analyses',
+      credit: 'FDA, January 2025 · Draft pulse-oximeter guidance · p.35 excerpt · not for implementation',
+      source: museumSources.fda,
+      note: 'Use the dedicated page to point to the table and the co-primary analyses. Remind students this is draft guidance.'
+    }),
     {
       title: 'Curate the intervention', section: 'Exhibit 02 · Measurement', time: '10', className: 'top',
       html: `<p class="eyebrow">Pair exercise · 55 seconds</p><h1 class="hero small">You may fund two.</h1><div class="grid-4" style="margin-top:3cqw"><div class="card"><h3>A</h3><p>Remind the clinician</p></div><div class="card"><h3>B</h3><p>Add a warning label</p></div><div class="card"><h3>C</h3><p>Require representative testing</p></div><div class="card"><h3>D</h3><p>Change procurement + escalation</p></div></div><div class="prompt">Which two—and what failure remains?</div>`,
@@ -89,9 +118,17 @@ window.DECK = {
       source: museumSources.fda,
       note: 'The FDA recommendations remain draft and not for implementation. Describe them as proposed, non-binding recommendations—not mandatory current requirements.'
     },
+    observation({
+      title: 'Observe the proposed study design', section: 'Exhibit 02 · Measurement', time: '12',
+      image: '../assets/source-images/museum/fda-guidance-page-32-study-diversity.png',
+      alt: 'Full-screen FDA draft guidance excerpt recommending skin pigmentation assessment and participant diversity',
+      credit: 'FDA, January 2025 · Draft pulse-oximeter guidance · p.32 excerpt · not for implementation',
+      source: museumSources.fda,
+      note: 'Ask students to identify the proposed measurement and representation requirements directly in the source.'
+    }),
     {
-      title: 'The cabinet', section: 'Exhibit 03 · Recovery', time: '13', className: 'dark split',
-      html: `<div><p class="eyebrow">03 / 03 · Look</p><h1 class="hero small">The cabinet<br>was wrong.</h1><p class="lede">The humans hesitated.</p></div><div class="adc-grid">${adcCells}</div>`,
+      title: 'The cabinet', section: 'Exhibit 03 · Recovery', time: '13', className: 'photo-fill generated-photo',
+      html: `<img src="../../assets/generated/adc-near-miss.png" alt="Original editorial image of a nurse pausing at an automated dispensing cabinet after noticing a mismatch"><div class="photo-copy"><p class="eyebrow">03 / 03 · Look</p><h1 class="hero small">The cabinet<br>was wrong.</h1><p class="lede">The humans hesitated.</p></div><div class="photo-credit"><strong>Original image</strong> · GPT Image 2 · HQRS 846, 2026</div>`,
       source: museumSources.adc,
       note: 'The hospital network and vendor were not named. Keep them anonymous and do not suggest access to its actual cabinet.'
     },
@@ -107,6 +144,14 @@ window.DECK = {
       source: museumSources.adc,
       note: 'A partial import followed by a second import misaligned data and reached the live network. Do not collapse this into blame of the operator.'
     },
+    observation({
+      title: 'Observe the data frameshift', section: 'Exhibit 03 · Recovery', time: '15',
+      image: '../assets/source-images/museum/adc-figure-1-frameshift.jpg',
+      alt: 'Full-screen ISMP Canada diagram showing the automated dispensing cabinet database frameshift error',
+      credit: 'ISMP Canada, 2025 · Automated dispensing cabinets · Figure 1 · frameshift illustration',
+      source: museumSources.adc,
+      note: 'Trace one row across the frameshift. The enlargement lets students see why a field-level data problem became a cabinet-level mismatch.'
+    }),
     {
       title: 'The blast radius', section: 'Exhibit 03 · Recovery', time: '16', className: 'dark center',
       html: `<p class="eyebrow">Not a drawer problem</p><div class="grid-3" style="width:92%"><div><div class="display-number" style="font-size:8.5cqw;color:var(--coral)">300+</div><span class="label">products</span></div><div><div class="display-number" style="font-size:8.5cqw;color:var(--amber)">150+</div><span class="label">transactions</span></div><div><div class="display-number" style="font-size:8.5cqw;color:var(--cyan)">6h</div><span class="label">Code Grey</span></div></div>`,
@@ -130,13 +175,21 @@ window.DECK = {
       source: museumSources.adc,
       note: 'A system view must explain what failed and what enabled recovery. This is the pivot from prevention alone to resilience.'
     },
+    observation({
+      title: 'Observe staged deployment', section: 'Exhibit 03 · Recovery', time: '21',
+      image: '../assets/source-images/museum/adc-figure-2-deployment.jpg',
+      alt: 'Full-screen ISMP Canada staged technology deployment and monitoring process',
+      credit: 'ISMP Canada, 2025 · Automated dispensing cabinets · Figure 2 · staged deployment model',
+      source: museumSources.adc,
+      note: 'Ask which stage is designed to prevent, detect, or contain a data problem before full deployment.'
+    }),
     {
       title: 'Three designed realities', section: 'Exit gallery', time: '22', className: 'top',
       html: `<p class="eyebrow">The collection</p><div class="grid-3"><div class="card" style="min-height:25cqw"><span class="label">01</span><h3 style="font-size:3cqw">Doloral</h3><div style="margin:auto;font-size:6cqw;font-weight:800">11</div><p>Designed meaning</p></div><div class="card" style="min-height:25cqw"><span class="label">02</span><h3 style="font-size:3cqw">Pulse ox</h3><div style="margin:auto;font-size:6cqw;font-weight:800;color:var(--teal)">94</div><p>Designed measurement</p></div><div class="card" style="min-height:25cqw"><span class="label">03</span><h3 style="font-size:3cqw">ADC</h3><div style="margin:auto;font-size:6cqw;font-weight:800;color:var(--cyan)">0</div><p>Designed recovery</p></div></div><h2 style="font-size:2.5cqw;margin-top:2.5cqw">The action occurred inside a designed world.</h2>`,
       note: 'Ask: “In each case, was the person outside the system?” The user is part of the system.'
     },
     {
-      title: 'Exit question', section: '', time: '25', className: 'dark center',
+      title: 'Exit question', section: '', time: '25', className: 'dark brand-monument center',
       html: `<h1 class="hero wide">Humans are fallible.<br>We will err.</h1><div style="height:2cqw"></div><h2 style="font-size:3cqw;color:var(--cyan);max-width:26ch">Therefore, systems must anticipate, detect, and help us recover.</h2><div class="fragment" style="position:absolute;inset:0;z-index:4;display:grid;place-content:center;justify-items:center;background:#111;color:#fff"><div class="reframe" style="width:74cqw"><div class="statement"><span class="strike">USER ERROR</span></div><div class="arrow">→</div><div class="statement" style="color:var(--cyan)">USE ERROR</div></div><p class="lede">What made this action likely?</p></div>`,
       note: 'Advance once more to reveal USE ERROR. Close: “This is not a museum of foolish people. It is a collection of reasonable actions in designed worlds.” Then hard cut to SEIPS/Human-Tech Ladder.'
     }
