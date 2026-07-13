@@ -33,8 +33,8 @@ window.DECK = {
       note: 'HSSIB counted capsules as doses; two strengths due at one administration time count as two doses. Do not call these 18 medication rounds.'
     },
     {
-      title: 'What happened', section: 'Act I · Attribution', time: '1', className: 'casefile',
-      html: `<p class="eyebrow">The medication timeline</p><div class="dose-strip">${outcomeDoses}</div><div class="dose-legend"><span style="--dot:var(--cyan)">8 on time</span><span style="--dot:var(--amber)">3 late</span><span style="--dot:var(--coral)">7 missed</span></div><h1 class="hero small" style="margin-top:4cqw"><span class="accent">8</span> of 18<br>on time.</h1>`,
+      title: 'What happened', section: 'Act I · Attribution', time: '1', className: 'casefile evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/forensic/hssib-parkinsons-executive-summary-8-of-18.png" alt="HSSIB executive-summary excerpt stating seven doses were missed, three late, and eight of eighteen on time"><figcaption class="attribution">© HSSIB, 2024 · Executive-summary excerpt · educational use</figcaption><span class="figure-tag">Source excerpt</span></figure><div><p class="eyebrow">Official finding</p><div class="display-number" style="font-size:12cqw;color:var(--cyan)">8/18</div><h1 class="hero small">on time.</h1><p class="lede">7 missed · 3 late</p></div>`,
       source: forensicSources.parkinson,
       note: 'State the numbers once, then hold three seconds. Do not simplify this to ten omitted doses.'
     },
@@ -68,7 +68,7 @@ window.DECK = {
     },
     {
       title: 'The environment is not scenery', section: 'Act II · Widen', time: '6', className: 'photo-fill',
-      html: `<img src="../../assets/generated/corridor-care.png" alt="Concept image of clinical care in a hospital corridor"><div class="photo-copy"><p class="eyebrow">Temporary care environments</p><h1 class="hero small">Not designed.<br>Not staffed.<br>Not equipped.</h1><p class="lede">The environment is part of the medication system.</p></div>`,
+      html: `<img src="../assets/source-images/forensic/hssib-temporary-care-corridor-trolleys.jpg" alt="Hospital trolleys being used in a temporary corridor care environment"><div class="photo-copy"><p class="eyebrow">Temporary care environments</p><h1 class="hero small">Not designed.<br>Not staffed.<br>Not equipped.</h1><p class="lede">The environment is part of the medication system.</p></div><div class="photo-credit">© HSSIB, 2026 · Figure 1 · temporary care environment</div>`,
       source: forensicSources.corridor,
       note: 'The 2026 corridor investigation is separate from the 2024 case. Use it to generalize the environmental design problem, not add facts to the patient’s story.'
     },
@@ -97,14 +97,15 @@ window.DECK = {
       note: 'The sources conflicted. The GP summary contained incorrect information; the neurology letter was unavailable and services could not be reached after hours.'
     },
     {
-      title: 'The work system appears', section: 'Act II · Widen', time: '12', className: 'casefile split third',
-      html: `<div class="system-orbit"><span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring-label l1">use</span><span class="ring-label l2">task</span><span class="ring-label l3">team</span><span class="ring-label l4">organization</span><span class="ring-label l5">environment</span></div><div><p class="eyebrow">SEIPS / Human-Tech Ladder</p><h1 class="hero small">Performance is conditional.</h1><p class="lede">People · tasks · tools · teams · organization · environment</p></div>`,
+      title: 'The work system appears', section: 'Act II · Widen', time: '12', className: 'casefile evidence-split',
+      html: `<div><p class="eyebrow">SEIPS 2.0 · Original framework</p><h1 class="hero small">Performance is conditional.</h1><p class="lede">People · tasks · tools · teams · organization · environment</p></div><figure class="source-figure"><img src="../assets/source-images/shared/seips-2-figure-1-crop.png" alt="Original SEIPS 2.0 model showing work system, processes, outcomes, and adaptation"><figcaption class="attribution">Holden et al., 2013 · Figure 1, SEIPS 2.0 model · Required Reading 4</figcaption><span class="figure-tag">Original figure</span></figure>`,
       source: forensicSources.seips,
       note: 'Name the categories quickly; do not lecture the diagram. The exact stage labels are simplified from SEIPS 2.0.'
     },
     {
-      title: 'A configuration that could not keep time', section: 'Act II · Widen', time: '13', className: 'casefile center',
-      html: `<p class="eyebrow">Not one broken link</p><h1 class="hero wide">A configuration that could not reliably keep time.</h1><p class="lede">Why did safe care require heroic memory and coordination?</p>`,
+      title: 'A configuration that could not keep time', section: 'Act II · Widen', time: '13', className: 'casefile evidence-split',
+      html: `<div><p class="eyebrow">Not one broken link</p><h1 class="hero small">A configuration that could not reliably keep time.</h1><p class="lede">Why did safe care require heroic memory and coordination?</p></div><figure class="source-figure"><img src="../assets/source-images/forensic/hssib-parkinsons-care-model.png" alt="HSSIB CARe model showing demand, capacity, adaptations, and outcomes"><figcaption class="attribution">© HSSIB, 2024 · Investigation CARe model · original figure</figcaption><span class="figure-tag">Source model</span></figure>`,
+      source: forensicSources.parkinson,
       note: 'Configuration is not a single root cause. The report presents interacting factors and learning prompts.'
     },
     {
@@ -119,14 +120,15 @@ window.DECK = {
       note: 'Connect the room’s proposals to HSSIB learning prompts, but call this a design brief—not proof of effectiveness.'
     },
     {
-      title: 'Fatigue as a stress-test', section: 'Act III · Stress-test', time: '19', className: 'casefile center',
-      html: `<p class="eyebrow">Evidence discipline</p><h1 class="hero wide">Fatigue is a real system hazard.</h1><p class="lede"><strong style="color:var(--coral)">Not established in this case.</strong><br>Would your design still work?</p>`,
+      title: 'Fatigue as a stress-test', section: 'Act III · Stress-test', time: '19', className: 'casefile evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/forensic/hssib-fatigue-reporting-behaviour.png" alt="HSSIB systems diagram of factors influencing fatigue reporting behaviour"><figcaption class="attribution">© HSSIB, 2025 · Figure 1 · factors affecting reporting behaviour</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">Evidence discipline</p><h1 class="hero small">Fatigue is a real system hazard.</h1><p class="lede"><strong style="color:var(--coral)">Not established in this case.</strong><br>Would your design still work?</p></div>`,
       source: forensicSources.fatigue,
       note: 'Do not retrofit fatigue into the Parkinson case. A separate HSSIB investigation supports using fatigue as a redesign stress-test and says the scale of related harm remains poorly measured.'
     },
     {
-      title: 'Which intervention survives?', section: 'Act III · Stress-test', time: '20', className: 'paper-grid top',
-      html: `<p class="eyebrow">The worst ordinary day</p><div class="layer-stack"><div class="layer" style="border-color:var(--coral);opacity:.46"><strong>Remember</strong><span>Be more careful</span></div><div class="layer" style="border-color:var(--amber)"><strong>Alert</strong><span>Who receives it? Who owns it? What closes the loop?</span></div><div class="layer" style="border-color:var(--teal)"><strong>System</strong><span>Make time critical visible, owned, and recoverable</span></div></div><h1 class="hero small" style="margin-top:4cqw">Which survives crowding, downtime, and fatigue?</h1>`,
+      title: 'Which intervention survives?', section: 'Act III · Stress-test', time: '20', className: 'paper-grid evidence-split reverse',
+      html: `<figure class="source-figure crop"><img src="../assets/source-images/forensic/hssib-temporary-care-adapted-corridor-call-bell.jpg" alt="Adapted corridor care spaces with electrical points, oxygen, and call bell infrastructure"><figcaption class="attribution">© HSSIB, 2026 · Figure 4 · practical corridor-care mitigation</figcaption><span class="figure-tag">Mitigation in practice</span></figure><div><p class="eyebrow">The worst ordinary day</p><div class="layer-stack"><div class="layer" style="border-color:var(--coral);opacity:.5"><strong>Remember</strong><span>Be more careful</span></div><div class="layer" style="border-color:var(--amber)"><strong>Alert</strong><span>Who owns it? What closes the loop?</span></div><div class="layer" style="border-color:var(--teal)"><strong>System</strong><span>Visible · owned · recoverable</span></div></div><h1 class="hero small" style="margin-top:2.6cqw">Which intervention survives?</h1></div>`,
+      source: forensicSources.corridor,
       note: 'Education and alerts can contribute. The test is whether success remains dependent on perfect attention at the worst moment.'
     },
     {

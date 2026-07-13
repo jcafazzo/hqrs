@@ -35,8 +35,8 @@ window.DECK = {
       note: 'Let the sentence sit. The room—not the clinician—has just acted.'
     },
     {
-      title: 'One model family', section: 'Act I · Attribution', time: '3', className: 'stage center',
-      html: `<p class="eyebrow">Epic Sepsis Model v2</p><h1 class="hero wide">One product family.<br><span class="accent">Four local implementations.</span></h1><div class="display-number" style="font-size:7cqw;margin-top:3cqw">227,091</div><span class="label">inpatient encounters</span>`,
+      title: 'One model family', section: 'Act I · Attribution', time: '3', className: 'stage evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/theatre/esm-v2-figure-2-v1-comparison.jpg" alt="Original JAMA Network Open figure comparing ESM v2 and ESM v1 across four health systems"><figcaption class="attribution">Wong et al., 2026 · JAMA Network Open · Figure 2 · CC BY</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">Epic Sepsis Model v2</p><h1 class="hero small">One product family.<br><span class="accent">Four local implementations.</span></h1><div class="display-number" style="font-size:7cqw;margin-top:2cqw">227,091</div><span class="label">inpatient encounters</span></div>`,
       source: theatreSources.ai,
       note: 'Say four health systems, not four hospitals. Each site fine-tuned ESM v2 using site-specific historical data.'
     },
@@ -59,8 +59,8 @@ window.DECK = {
       note: 'Use the paper’s term NNE. These are above-threshold predictions per true-positive prediction, not observed interruptive alerts handled by clinicians.'
     },
     {
-      title: 'Correct the slogan', section: 'Act I · Attribution', time: '6', className: 'stage left',
-      html: `<p class="eyebrow">The accurate systems claim</p><h1 class="hero small">Same product name.</h1><div class="layer-stack" style="width:70%;margin-top:3cqw"><div class="layer"><strong>Model</strong><span>locally fine-tuned</span></div><div class="layer"><strong>Population</strong><span>different prevalence and mix</span></div><div class="layer"><strong>Threshold</strong><span>different operating point</span></div><div class="layer"><strong>Work</strong><span>different consequences</span></div></div>`,
+      title: 'Correct the slogan', section: 'Act I · Attribution', time: '6', className: 'stage evidence-split',
+      html: `<div><p class="eyebrow">The accurate systems claim</p><h1 class="hero small">Same product name.</h1><div class="layer-stack" style="margin-top:2cqw"><div class="layer"><strong>Model</strong><span>locally fine-tuned</span></div><div class="layer"><strong>Population</strong><span>different prevalence and mix</span></div><div class="layer"><strong>Threshold</strong><span>different operating point</span></div><div class="layer"><strong>Work</strong><span>different consequences</span></div></div></div><figure class="source-figure"><img src="../assets/source-images/theatre/esm-v2-figure-1-performance.jpg" alt="Original JAMA figure showing sensitivity, specificity, PPV, and NPV across thresholds at four institutions"><figcaption class="attribution">Wong et al., 2026 · JAMA Network Open · Figure 1 · CC BY</figcaption><span class="figure-tag">Original figure</span></figure>`,
       source: theatreSources.ai,
       note: 'Do not say the identical model performed differently. The stronger, accurate line is one product family becoming four local model-work systems.'
     },
@@ -92,19 +92,19 @@ window.DECK = {
     },
     {
       title: 'Corridor reveal', section: 'Act II · Stations', time: '13', className: 'photo-fill',
-      html: `<img src="../../assets/generated/corridor-care.png" alt="Concept image of hospital corridor care"><div class="photo-copy"><p class="eyebrow">Station A · Environment</p><h1 class="hero small">The corridor is part of the clinical system.</h1><p class="lede">Call bells · sightlines · staffing · oxygen + suction · patient flow</p></div>`,
+      html: `<img src="../assets/source-images/theatre/hssib-tce-figure-1-corridor.jpg" alt="Original HSSIB photograph of trolleys in a temporary corridor care environment"><div class="photo-copy"><p class="eyebrow">Station A · Environment</p><h1 class="hero small">The corridor is part of the clinical system.</h1><p class="lede">Call bells · sightlines · staffing · oxygen + suction · patient flow</p></div><div class="photo-credit">© HSSIB, 2026 · Figure 1 · temporary care environment</div>`,
       source: theatreSources.corridor,
       note: 'HSSIB found no evidence that the temporary environment or response affected the outcome of the reported collapse. Ask which redesign changes the room and which asks the nurse to compensate.'
     },
     {
-      title: 'Fatigue reveal', section: 'Act II · Stations', time: '15', className: 'stage split',
-      html: `<div><p class="eyebrow">Station B · Work organization</p><h1 class="hero small">Fatigue is not a character flaw.</h1></div><div class="layer-stack"><div class="layer"><strong>Sleep</strong><span>loss</span></div><div class="layer"><strong>Wake</strong><span>extended</span></div><div class="layer"><strong>Clock</strong><span>circadian phase</span></div><div class="layer"><strong>Work</strong><span>mental + physical load</span></div></div>`,
+      title: 'Fatigue reveal', section: 'Act II · Stations', time: '15', className: 'stage evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/theatre/hssib-fatigue-figure-1-reporting.png" alt="HSSIB systems diagram of factors affecting fatigue reporting behaviour"><figcaption class="attribution">© HSSIB, 2025 · Figure 1 · reporting behaviour system map</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">Station B · Work organization</p><h1 class="hero small">Fatigue is not a character flaw.</h1><div class="layer-stack" style="margin-top:2cqw"><div class="layer"><strong>Sleep</strong><span>loss</span></div><div class="layer"><strong>Wake</strong><span>extended</span></div><div class="layer"><strong>Clock</strong><span>circadian phase</span></div><div class="layer"><strong>Work</strong><span>mental + physical load</span></div></div></div>`,
       source: theatreSources.fatigue,
       note: 'The scan account was a staff member’s belief, not a causal adjudication. HSSIB says the scale of fatigue-related harm is poorly measured.'
     },
     {
-      title: 'Resilience reveal', section: 'Act II · Stations', time: '16', className: 'cyan center',
-      html: `<p class="eyebrow">Station C · Technology + recovery</p><h1 class="hero wide">The error propagated.<br>People interrupted it.</h1><div class="grid-3" style="width:86%;margin-top:3cqw"><div><div class="display-number" style="font-size:7cqw">300+</div><span class="label">products</span></div><div><div class="display-number" style="font-size:7cqw">150+</div><span class="label">transactions</span></div><div><div class="display-number" style="font-size:7cqw">0</div><span class="label">reported harm</span></div></div>`,
+      title: 'Resilience reveal', section: 'Act II · Stations', time: '16', className: 'cyan evidence-split reverse',
+      html: `<figure class="source-figure wide-strip"><img src="../assets/source-images/theatre/ismp-adc-figure-1-frameshift.jpg" alt="ISMP Canada diagram showing the automated dispensing cabinet data frameshift"><figcaption class="attribution">© ISMP Canada, 2025 · Figure 1 · frameshift error illustration</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">Station C · Technology + recovery</p><h1 class="hero small">The error propagated.<br>People interrupted it.</h1><div class="grid-3" style="margin-top:2.4cqw"><div><div class="display-number" style="font-size:6cqw">300+</div><span class="label">products</span></div><div><div class="display-number" style="font-size:6cqw">150+</div><span class="label">transactions</span></div><div><div class="display-number" style="font-size:6cqw">0</div><span class="label">reported harm</span></div></div></div>`,
       source: theatreSources.adc,
       note: 'Ask where the error was created and where it was detected. No reported patient harm is not proof that every discrepancy was detected.'
     },
@@ -114,8 +114,8 @@ window.DECK = {
       note: 'Invite the remaining six reporters to supply one phrase each. Person-level facts can remain; relocate them inside how the system produced, tolerated, detected, or mitigated them.'
     },
     {
-      title: 'Name the method', section: 'Act III · Revision', time: '19', className: 'stage center',
-      html: `<p class="eyebrow">Name it after they have used it</p><h1 class="hero wide">Same action.<br><span class="accent">Wider frame.</span></h1><p class="lede">Person · task · tool · team · environment · organization · policy</p><h2 style="font-size:2.5cqw;margin-top:3cqw">You just did systems thinking.</h2>`,
+      title: 'Name the method', section: 'Act III · Revision', time: '19', className: 'stage evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/shared/seips-2-figure-1-crop.png" alt="Original SEIPS 2.0 model"><figcaption class="attribution">Holden et al., 2013 · Figure 1 · Required Reading 4</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">Name it after they have used it</p><h1 class="hero small">Same action.<br><span class="accent">Wider frame.</span></h1><p class="lede">Person · task · tool · team · environment · organization · policy</p><h2 style="font-size:2.9cqw;margin-top:2.2cqw">You just did systems thinking.</h2></div>`,
       note: 'A system boundary is a choice. Widen it until conditions become visible that can be redesigned.'
     },
     {

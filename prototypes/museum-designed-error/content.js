@@ -26,7 +26,7 @@ window.DECK = {
     },
     {
       title: 'The label', section: 'Exhibit 01 · Meaning', time: '1', className: 'left',
-      html: `<p class="eyebrow">01 / 03 · Look</p><div class="doloral-display"><span class="brand">DOLORAL 1</span><span class="strength">1 mg/mL</span></div><div class="gallery-label"><span class="number">Re-creation</span><h2>Read the concentration.</h2><p>Say it quietly to the person beside you.</p></div>`,
+      html: `<p class="eyebrow">01 / 03 · Look</p><figure class="source-figure wide-strip" style="width:92%"><img src="../assets/source-images/museum/doloral-figure-1-drug-system-display.jpg" alt="Drug information system display reading Morphine HCL Doloral 1 1 mg per mL"><figcaption class="attribution">© ISMP Canada, 2025 · Figure 1 · reported drug-information display</figcaption><span class="figure-tag">Original source image</span></figure><div class="gallery-label" style="margin-top:2cqw"><span class="number">Read what was shown</span><h2>Read the concentration.</h2><p>Say it quietly to the person beside you.</p></div>`,
       source: museumSources.doloral,
       note: 'Hold silence for three seconds. Do not ask anyone to confess how they read it. The proximity of the numeral in the brand and concentration was a key contributing factor.'
     },
@@ -37,8 +37,8 @@ window.DECK = {
       note: 'Several reports described this reading; one reported incident resulted in severe harm. Do not state or imply an incidence rate.'
     },
     {
-      title: 'Widen the frame', section: 'Exhibit 01 · Meaning', time: '3', className: 'center',
-      html: `<p class="eyebrow">01 / 03 · Widen</p><h1 class="hero small">Where, exactly,<br>is the error?</h1><div class="timeline" style="width:92%"><div class="event"><strong>Brand</strong><span>Numeral in the name</span></div><div class="event"><strong>Database</strong><span>Authorized field</span></div><div class="event"><strong>Display</strong><span>Adjacent values</span></div><div class="event"><strong>Action</strong><span>Meaning becomes dose</span></div></div>`,
+      title: 'Widen the frame', section: 'Exhibit 01 · Meaning', time: '3', className: 'evidence-split reverse',
+      html: `<figure class="source-figure wide-strip"><img src="../assets/source-images/museum/doloral-figure-2-health-canada-display.jpg" alt="Health Canada Drug Product Database showing Doloral product names and strengths"><figcaption class="attribution">© ISMP Canada, 2025 · Figure 2 · Health Canada database excerpt</figcaption><span class="figure-tag">Original source image</span></figure><div><p class="eyebrow">01 / 03 · Widen</p><h1 class="hero small">Where, exactly, is the error?</h1><div class="layer-stack" style="margin-top:2cqw"><div class="layer"><strong>Brand</strong><span>numeral in name</span></div><div class="layer"><strong>Database</strong><span>authorized field</span></div><div class="layer"><strong>Display</strong><span>adjacent values</span></div><div class="layer"><strong>Action</strong><span>meaning becomes dose</span></div></div></div>`,
       source: museumSources.doloral,
       note: 'The screen inherited a product name and placed it beside a concentration. Do not say the display alone caused every report.'
     },
@@ -73,8 +73,8 @@ window.DECK = {
       note: 'The paper used self-identified race, not measured pigmentation. Race is an imperfect social proxy, and these are paired measurements in one cohort—not universal device failure rates.'
     },
     {
-      title: 'Designed measurement', section: 'Exhibit 02 · Measurement', time: '9', className: 'paper-grid split third',
-      html: `<div class="pulse-device" style="width:13cqw;height:23cqw"><div class="screen" style="font-size:4cqw">94</div><div class="button"></div></div><div><p class="eyebrow">02 / 03 · Widen</p><div class="layer-stack"><div class="layer"><strong>Physics</strong><span>light + sensor</span></div><div class="layer"><strong>Software</strong><span>algorithm</span></div><div class="layer"><strong>Evidence</strong><span>validation sample</span></div><div class="layer"><strong>System</strong><span>label · procurement · threshold</span></div></div></div>`,
+      title: 'Designed measurement', section: 'Exhibit 02 · Measurement', time: '9', className: 'paper-grid evidence-split',
+      html: `<div><p class="eyebrow">02 / 03 · Widen</p><h1 class="hero small">The number has a work system.</h1><div class="layer-stack" style="margin-top:2cqw"><div class="layer"><strong>Physics</strong><span>light + sensor</span></div><div class="layer"><strong>Software</strong><span>algorithm</span></div><div class="layer"><strong>Evidence</strong><span>validation sample</span></div><div class="layer"><strong>System</strong><span>label · procurement · threshold</span></div></div></div><figure class="source-figure"><img src="../assets/source-images/museum/fda-guidance-page-35-performance-criteria.png" alt="FDA draft guidance excerpt describing pulse oximeter performance analyses"><figcaption class="attribution">FDA, 2025 · Draft guidance p.35 excerpt · not for implementation</figcaption><span class="figure-tag">Draft source excerpt</span></figure>`,
       source: museumSources.fda,
       note: 'The number is produced by device physics, software, validation evidence, labelling, procurement, and clinical interpretation. Other conditions can also affect accuracy.'
     },
@@ -84,8 +84,8 @@ window.DECK = {
       note: 'Ask one clinical pair and one non-clinical pair for twenty seconds each. Reward boundary widening, not selection of a single “correct” card.'
     },
     {
-      title: 'Design the evidence', section: 'Exhibit 02 · Measurement', time: '12', className: 'center',
-      html: `<p class="eyebrow">02 / 03 · Change</p><h1 class="hero wide">Design the evidence.</h1><div style="width:78%;height:5cqw;border-radius:999px;background:linear-gradient(90deg,#f4d7c4,#d7aa86,#a96f50,#75442f,#3e2118);margin:4cqw auto 2cqw"></div><div class="grid-3" style="width:78%"><span class="micro">more participants</span><span class="micro">pigmentation measured</span><span class="micro">performance labelled</span></div>`,
+      title: 'Design the evidence', section: 'Exhibit 02 · Measurement', time: '12', className: 'evidence-split reverse',
+      html: `<figure class="source-figure"><img src="../assets/source-images/museum/fda-guidance-page-32-study-diversity.png" alt="FDA draft guidance excerpt recommending skin pigmentation assessment and participant diversity"><figcaption class="attribution">FDA, 2025 · Draft guidance p.32 excerpt · not for implementation</figcaption><span class="figure-tag">Draft source excerpt</span></figure><div><p class="eyebrow">02 / 03 · Change</p><h1 class="hero small">Design the evidence.</h1><div style="width:100%;height:5cqw;border-radius:999px;background:linear-gradient(90deg,#f4d7c4,#d7aa86,#a96f50,#75442f,#3e2118);margin:3cqw 0 2cqw"></div><p class="lede">More participants.<br>Pigmentation measured.<br>Performance labelled.</p></div>`,
       source: museumSources.fda,
       note: 'The FDA recommendations remain draft and not for implementation. Describe them as proposed, non-binding recommendations—not mandatory current requirements.'
     },
@@ -102,8 +102,8 @@ window.DECK = {
       note: 'Nursing staff reported both discrepancies within minutes. Do not say a wrong medication was administered; these were detection reports.'
     },
     {
-      title: 'The database shifted', section: 'Exhibit 03 · Recovery', time: '15', className: 'dark center',
-      html: `<p class="eyebrow">03 / 03 · Widen</p><h1 class="hero small">One partial import.<br>Then another.</h1><div class="timeline" style="width:90%"><div class="event"><strong>Name</strong></div><div class="event"><strong>Strength</strong></div><div class="event"><strong>Format</strong></div><div class="event"><strong>Location</strong></div></div><p class="lede">The fields no longer travelled together.</p>`,
+      title: 'The database shifted', section: 'Exhibit 03 · Recovery', time: '15', className: 'dark evidence-split',
+      html: `<div><p class="eyebrow">03 / 03 · Widen</p><h1 class="hero small">One partial import.<br>Then another.</h1><p class="lede">The fields no longer travelled together.</p></div><figure class="source-figure wide-strip"><img src="../assets/source-images/museum/adc-figure-1-frameshift.jpg" alt="ISMP Canada diagram showing a database frameshift error"><figcaption class="attribution">© ISMP Canada, 2025 · Figure 1 · frameshift illustration</figcaption><span class="figure-tag">Original figure</span></figure>`,
       source: museumSources.adc,
       note: 'A partial import followed by a second import misaligned data and reached the live network. Do not collapse this into blame of the operator.'
     },
@@ -125,8 +125,8 @@ window.DECK = {
       note: 'Ask one group from each category for a fifteen-second label. Seed only if needed: test deployment, illogical-data checks, escalation, downtime procedures, emergency operations.'
     },
     {
-      title: 'The full exhibit label', section: 'Exhibit 03 · Recovery', time: '21', className: 'dark center',
-      html: `<p class="eyebrow">The same story holds failure and success</p><div class="timeline" style="width:94%;grid-template-columns:repeat(5,1fr)"><div class="event"><strong>Protocol</strong><span>deviation</span></div><div class="event"><strong>Data</strong><span>misalignment</span></div><div class="event"><strong>Network</strong><span>propagation</span></div><div class="event"><strong>Human</strong><span>detection</span></div><div class="event"><strong>System</strong><span>recovery</span></div></div>`,
+      title: 'The full exhibit label', section: 'Exhibit 03 · Recovery', time: '21', className: 'dark evidence-split reverse',
+      html: `<figure class="source-figure wide-strip"><img src="../assets/source-images/museum/adc-figure-2-deployment.jpg" alt="ISMP Canada staged technology deployment and monitoring process"><figcaption class="attribution">© ISMP Canada, 2025 · Figure 2 · staged deployment model</figcaption><span class="figure-tag">Original figure</span></figure><div><p class="eyebrow">The same story holds failure and success</p><h1 class="hero small">Prevent.<br>Detect.<br>Recover.</h1><p class="lede">A system view explains both failure and response.</p></div>`,
       source: museumSources.adc,
       note: 'A system view must explain what failed and what enabled recovery. This is the pivot from prevention alone to resilience.'
     },
