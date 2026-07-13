@@ -248,19 +248,19 @@ This prototype curates; it does not delete. Material that does not earn a place 
 
 ## Primary-source register
 
-- **[P] HSSIB (2024), _Medication not given: administration of time critical medication in the emergency department_.** The report supports 18 scheduled doses, seven missed, three late, eight on time; 52 hours in the ED; 44 hours in a corridor; undefined roles; lack of dedicated pharmacy support; ePMA outage and lack of alerting; information conflicts and after-hours limitations.  
+- **[P] HSSIB (2024), _Medication not given: administration of time critical medication in the emergency department_.** The report supports 18 scheduled doses, seven missed, three late, eight on time; 52 hours in the ED; 44 hours in a corridor; undefined roles; lack of dedicated pharmacy support; ePMA outage and lack of alerting; information conflicts and after-hours limitations.
   <https://www.hssib.org.uk/patient-safety-investigations/medication-related-harm/investigation-report/>
 
-- **[T] HSSIB (2026), _Patient care in temporary care environments_.** The report supports the description of corridors and other temporary spaces as not originally designed, staffed or equipped for care, the need to manage system-wide risk, and the tension between non-normalization and practical safety mitigations.  
+- **[T] HSSIB (2026), _Patient care in temporary care environments_.** The report supports the description of corridors and other temporary spaces as not originally designed, staffed or equipped for care, the need to manage system-wide risk, and the tension between non-normalization and practical safety mitigations.
   <https://www.hssib.org.uk/patient-safety-investigations/patient-care-in-temporary-care-environments/investigation-report/>
 
-- **[F] HSSIB (2025), _The impact of staff fatigue on patient safety_.** The report supports treating fatigue as an under-recognized systems hazard, acknowledges poor measurement of its scale, uses SEIPS, and recommends systems-oriented fatigue-risk management.  
+- **[F] HSSIB (2025), _The impact of staff fatigue on patient safety_.** The report supports treating fatigue as an under-recognized systems hazard, acknowledges poor measurement of its scale, uses SEIPS, and recommends systems-oriented fatigue-risk management.
   <https://www.hssib.org.uk/patient-safety-investigations/the-impact-of-staff-fatigue-on-patient-safety/investigation-report/>
 
-- **[FDA] US Food and Drug Administration (updated 28 May 2026), _Device Surveillance and Reporting Processes_.** Current official definition of “use error” in the medical-device context.  
+- **[FDA] US Food and Drug Administration (updated 28 May 2026), _Device Surveillance and Reporting Processes_.** Current official definition of “use error” in the medical-device context.
   <https://www.fda.gov/medical-devices/human-factors-and-medical-devices/human-factors-postmarket-information-device-surveillance-and-reporting-processes>
 
-- **[SEIPS] Holden RJ, Carayon P, Gurses AP, et al. (2013), _SEIPS 2.0: a human factors framework for studying and improving the work of healthcare professionals and patients_.**  
+- **[SEIPS] Holden RJ, Carayon P, Gurses AP, et al. (2013), _SEIPS 2.0: a human factors framework for studying and improving the work of healthcare professionals and patients_.**
   <https://doi.org/10.1080/00140139.2013.838643>
 
 ## Build brief for the visual prototype
