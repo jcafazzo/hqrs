@@ -10,3 +10,19 @@
 - **Educational use:** Showing the original framework immediately after the simplified stage-language version.
 
 The uncropped rendered source page is retained as `seips-2-figure-1.png` for provenance.
+
+## `hssib-epma-roadmap.png`
+
+- **Source:** Health Services Safety Investigations Body. *Electronic prescribing and medicines administration: procurement and safety learning in acute hospitals*. Published 28 May 2026.
+- **Original designation:** Figure 2, “Overview of the stages in the ePMA roadmap,” adapted in the report from the NHS England digital medicines implementation roadmap.
+- **Source URL:** https://www.hssib.org.uk/patient-safety-investigations/medication-related-harm/fourth-investigation-report/
+- **Treatment:** Extracted directly from the official report PDF. No content alteration.
+- **Educational use:** Showing that selection and procurement are only one stage in a continuing implementation and optimisation system.
+
+## `hssib-epma-control-map.png`
+
+- **Source:** Health Services Safety Investigations Body. *Electronic prescribing and medicines administration: procurement and safety learning in acute hospitals*. Published 28 May 2026.
+- **Original designation:** Figure 3, “High-level overview of the main legislation, regulations and standards involved with ePMA procurement and safety learning.”
+- **Source URL:** https://www.hssib.org.uk/patient-safety-investigations/medication-related-harm/fourth-investigation-report/
+- **Treatment:** Extracted directly from the official report PDF. No content alteration.
+- **Educational use:** Full-field observation of the distributed control and feedback structure around a clinical software product.
