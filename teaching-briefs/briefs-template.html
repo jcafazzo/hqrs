@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An eight-case, evidence-grounded teaching decision library for the HQRS 846 introductory human-factors lecture.">
+  <title>$if(pagetitle)$$pagetitle$$else$HQRS 846 teaching briefs$endif$</title>
+  <link rel="stylesheet" href="briefs.css">
+</head>
+<body>
+$for(include-before)$$include-before$$endfor$
+<div class="brief-shell">
+  <aside class="toc-panel"><p class="toc-label">Decision guide + eight briefs</p>$if(toc)$$toc$$endif$</aside>
+  <main class="brief-content">$body$</main>
+</div>
+</body>
+</html>

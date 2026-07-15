@@ -1,1 +1,15 @@
 .DS_Store
+
+# Classroom-only source slides and renders. These contain third-party,
+# internal, clinical, or identifiable material and require an asset-level
+# clearance pass before any public release.
+prototypes/altitude-full-lecture/
+prototypes/altitude-original-20/
+prototypes/altitude-cognition-2026/assets/source/
+prototypes/altitude-cognition-2026/original-map.js
+prototypes/altitude-service-design-2026/assets/source/
+prototypes/altitude-service-design-2026/original-map.js
+prototypes/renders/altitude-cognition-2026/
+prototypes/renders/altitude-service-design-2026/
+prototypes/renders/altitude-full-lecture/
+prototypes/renders/altitude-original-20/
